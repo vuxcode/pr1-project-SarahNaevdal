@@ -4,5 +4,14 @@
 
 For example: 
 
-- 2022-10-24 18:00 Worked for 1 hour.
-  - *List the things you have done.*
+- 2025-03-27 13:00. Worked for 1/2 hour.
+  - Created variables for each page of the book.
+  - Output the first page on the screen.
+  - Created buttons for the first page. 
+
+  - 2025-03-27 20.00. Worked for 1/2 hour. 
+  - Gave the buttons id.
+  - Connected button 2.1. 
+
+  -2025-03-27 21.00. Worked for 2 hours.
+  -Connected button 2.2. 
