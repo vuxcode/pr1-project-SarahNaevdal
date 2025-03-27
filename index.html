@@ -1,31 +1,44 @@
 <!--Create buttons for the book-->
-<button>Option1</button>
-<button>Option2</button>
+
+<!--Create two buttons for the first page-->
+<!--Give the buttons different id:s-->
+<button id="2.1">1Option1</button>
+<button id="2.2">1Option2</button>
 
 <script>
 
 //This is an interactiv book where the user can choose how the story will continue and end.
 
 //Make a variable for each page. 
-var page1 = "Page 1"
-var page21 = "Page 2.1"
-var page22 = "Page 2.2"
-var page31 = "Page 3.1"
-var page32 = "Page 3.2"
-var page33 = "Page 3.3"
-var page34 = "Page 3.4"
-var page41 = "Page 4.1"
-var page42 = "Page 4.2"
-var page43 = "Page 4.3"
-var page44 = "Page 4.4"
-var page45 = "Page 4.5"
-var page46 = "Page 4.6"
-var page47 = "Page 4.7"
-var page48 = "Page 4.8"
+var page1 = "Page 1";
+var page21 = "Page 2.1";
+var page22 = "Page 2.2";
+var page31 = "Page 3.1";
+var page32 = "Page 3.2";
+var page33 = "Page 3.3";
+var page34 = "Page 3.4";
+var page41 = "Page 4.1";
+var page42 = "Page 4.2";
+var page43 = "Page 4.3";
+var page44 = "Page 4.4";
+var page45 = "Page 4.5";
+var page46 = "Page 4.6";
+var page47 = "Page 4.7";
+var page48 = "Page 4.8";
 
 //Output the first page on the screen.
 document.write(page1);
 
-//Add two buttons to the first page. 
+//Create a function.
+var button21 = document.getElementById("2.1"); 
+
+//Add a clickevent. 
+button21.addEventListener("click", page);
+
+//Create a function to show the chosen page. 
+function page() {
+    //Show the page to the user.
+    document.write(page21);
+};
 
 </script>
