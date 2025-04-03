@@ -1,5 +1,7 @@
+<!--This is an interactive book where the user can choose how the story will continue and end-->
+<!--Output the first page of the of the book-->
+Text page 1 <br><br>  
 <!--Create buttons for the book-->
-
 <!--Create two buttons for the first page-->
 <!--Give the buttons different id:s-->
 <button id="2.1">1Option1</button>
@@ -7,30 +9,26 @@
 
 <script>
 
-//This is an interactiv book where the user can choose how the story will continue and end.
-
 //Make a variable for each page. 
-var page1 = "Page 1";
-var page21 = "Page 2.1";
-var page22 = "Page 2.2";
-var page31 = "Page 3.1";
-var page32 = "Page 3.2";
-var page33 = "Page 3.3";
-var page34 = "Page 3.4";
-var page41 = "Page 4.1";
-var page42 = "Page 4.2";
-var page43 = "Page 4.3";
-var page44 = "Page 4.4";
-var page45 = "Page 4.5";
-var page46 = "Page 4.6";
-var page47 = "Page 4.7";
-var page48 = "Page 4.8";
+var page1 = "Text page 1";
+var page21 = "Text page 2.1";
+var page22 = "Text page 2.2";
+var page31 = "Text page 3.1";
+var page32 = "Text page 3.2";
+var page33 = "Text page 3.3";
+var page34 = "Text page 3.4";
+var page41 = "Text page 4.1";
+var page42 = "Text page 4.2";
+var page43 = "Text page 4.3";
+var page44 = "Text page 4.4";
+var page45 = "Text page 4.5";
+var page46 = "Text page 4.6";
+var page47 = "Text page 4.7";
+var page48 = "Text page 4.8";
 
-//Output the first page on the screen.
-document.write(page1);
-
-//Create a function for each button.
-var button1 = document.getElementById(2.1); 
+//Create a variable to find the first button element on the screen.
+var button1 = document.getElementById(2.1);
+//Add the click element to the first button to run the 'pageX' function. 
 button1.addEventListener("click", pageX)
 
 //Create a function to show the chosen page. 
@@ -39,7 +37,9 @@ function pageX() {
     document.write(page21)
 };
 
+//Create a variable to find the second button element on the screen.
 var button2 = document.getElementById(2.2);
+//Add the click element to the second button to run the 'pageY' function.
 button2.addEventListener("click", pageY)
 
 //Create a function to show the chosen page. 
@@ -47,9 +47,5 @@ function pageY() {
     //Show the page to the user.
     document.write(page22)
 };
-
-//Add a clickevent. 
-
-
 
 </script>
