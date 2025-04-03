@@ -15,3 +15,7 @@ For example:
 
   -2025-03-27 21.00. Worked for 2 hours.
   -Connected button 2.2. 
+
+  2025-04-03 19.30. Worked for 2 hours.
+  -Moved the output of page 1 to the top with the buttons on the bottom.
+  -Searched for instructions how to update the buttons. 
