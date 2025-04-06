@@ -2,50 +2,40 @@
 <!--Output the first page of the of the book-->
 Text page 1 <br><br>  
 <!--Create buttons for the book-->
-<!--Create two buttons for the first page-->
+<!--Create two buttons for the first page that can be updated-->
 <!--Give the buttons different id:s-->
-<button id="2.1">1Option1</button>
-<button id="2.2">1Option2</button>
+<button id="button1">Update</button>
+<button id="button2">Update</button>
 
 <script>
 
-//Make a variable for each page. 
-var page1 = "Text page 1";
-var page21 = "Text page 2.1";
-var page22 = "Text page 2.2";
-var page31 = "Text page 3.1";
-var page32 = "Text page 3.2";
-var page33 = "Text page 3.3";
-var page34 = "Text page 3.4";
-var page41 = "Text page 4.1";
-var page42 = "Text page 4.2";
-var page43 = "Text page 4.3";
-var page44 = "Text page 4.4";
-var page45 = "Text page 4.5";
-var page46 = "Text page 4.6";
-var page47 = "Text page 4.7";
-var page48 = "Text page 4.8";
+//Create a variable for each page. 
+var page1 = "-Text- page 1";
+var page21 = "-Text- page 2.1";
+var page22 = "-Text- page 2.2";
+var page31 = "-Text- page 3.1";
+var page32 = "-Text- page 3.2";
+var page33 = "-Text- page 3.3";
+var page34 = "-Text- page 3.4";
+var page41 = "-Text- page 4.1";
+var page42 = "-Text- page 4.2";
+var page43 = "-Text- page 4.3";
+var page44 = "-Text- page 4.4";
+var page45 = "-Text- page 4.5";
+var page46 = "-Text- page 4.6";
+var page47 = "-Text- page 4.7";
+var page48 = "-Text- page 4.8";
 
-//Create a variable to find the first button element on the screen.
-var button1 = document.getElementById(2.1);
-//Add the click element to the first button to run the 'pageX' function. 
-button1.addEventListener("click", pageX)
+//Create a variable to find the button element on the screen.
+var leftButton = document.getElementById("button1");
 
-//Create a function to show the chosen page. 
-function pageX() {
-    //Show the page to the user.
-    document.write(page21)
-};
+//Add the click event to the button to run the page function.
+leftButton.addEventListener("click", page);
 
-//Create a variable to find the second button element on the screen.
-var button2 = document.getElementById(2.2);
-//Add the click element to the second button to run the 'pageY' function.
-button2.addEventListener("click", pageY)
-
-//Create a function to show the chosen page. 
-function pageY() {
-    //Show the page to the user.
-    document.write(page22)
-};
+//Create a page function. 
+function page(){
+    //Show the choosen page to the user.
+    document.write(page21);
+}
 
 </script>
