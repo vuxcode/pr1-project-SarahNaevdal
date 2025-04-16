@@ -30,17 +30,27 @@ var page48 = "-Text- page 4.8";
 //Create a variable to find the button element on the screen.
 var button1 = document.getElementById("leftButton");
 
-button1.addEventListener("click", text);
+//Create a variable to find the button element on the screen.
+var button2 = document.getElementById("rightButton");
 
-//Create a function to change the text on the screen.
-    function text() {
-    //Add the click event to the button to run the page function.
+button1.addEventListener("click", text1);
+button2.addEventListener("click", text2);
+
+//Create a function to change the text on the screen by clicking on the left button.
+    function text1() {
+    //Add the click event to the button to run the text function.
     var output = document.getElementById("demo");
-    console.log(output)
-    //Show the choosen page.
+    //Show the chosen page on the screen.
     output.innerHTML = page21
 }
 
+//Create a function to change the text on the screen by clicking on the right button.
+    function text2() {
+    //Add the click event to the button to run the text function.
+    var output = document.getElementById("demo");
+    //Show the chosen page on the screen. 
+    output.innerHTML = page22
+    }
 
 
 </script>
