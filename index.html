@@ -1,17 +1,24 @@
 <!--This is an interactive book where the user can choose how the story will continue and end-->
+
+<!--Ask the user for some input-->
+Type your name here.<br>
+<!--Create a check box-->
+<input id ="username" type="text"/> 
+<!--Add a button for the user to click-->
+<button onclick="getInput()">Enter</button>
+
 <!--Create a headline-->
 <h1>Headline</h1>
-<!--Create a text element to use to output the first page of the book-->
+<!--Create a text element, that can be updated, and output the first page of the book-->
 <h2 id="demo">Text- page 1</h2><br><br>  
-<!--Create buttons for the book-->
-<!--Create two buttons for that can be updated-->
+<!--Create two buttons for the book that can be updated-->
 <!--Give the buttons different id:s-->
 <button id="leftButton">Update</button>
 <button id="rightButton">Update</button>
 
 <script>
 
-//Create a variable for each page. 
+//Create a variable for each new page. 
 var page21 = "-Text- page 2.1";
 var page22 = "-Text- page 2.2";  
 var page31 = "-Text- page 3.1";
@@ -27,12 +34,26 @@ var page46 = "-Text- page 4.6";
 var page47 = "-Text- page 4.7";
 var page48 = "-Text- page 4.8";
 
-//Create a variable to find the button element on the screen.
+//Create a variable to find the first button element on the screen.
 var button1 = document.getElementById("leftButton");
 
-//Create a variable to find the button element on the screen.
+//Create a variable to find the second button element on the screen.
 var button2 = document.getElementById("rightButton");
 
+//Store the text from the textbox as a variable.
+var username = "";
+
+//Find the textbox and connect it to a varable. 
+var output = document.getElementById("output");
+
+//Add a function to get the users input (name).
+    function getInput() {
+        var data = document.getElementById("username");
+        //Test that the variable works.
+        console.log(data);
+    }
+
+    //Add the click event to the buttons to run the text functions.
 button1.addEventListener("click", text1);
 button2.addEventListener("click", text2);
 
@@ -42,6 +63,8 @@ button2.addEventListener("click", text2);
     var output = document.getElementById("demo");
     //Show the chosen page on the screen.
     output.innerHTML = page21
+    //Show the chosen page number in the console.
+    console.log("page 2.1")
 }
 
 //Create a function to change the text on the screen by clicking on the right button.
@@ -50,6 +73,8 @@ button2.addEventListener("click", text2);
     var output = document.getElementById("demo");
     //Show the chosen page on the screen. 
     output.innerHTML = page22
+    //Show the chosen page number in the console.
+    console.log("page 2.2")
     }
 
 
