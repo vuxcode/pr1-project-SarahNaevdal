@@ -13,9 +13,13 @@ For example:
   - Gave the buttons id.
   - Connected button 2.1. 
 
-  -2025-03-27 21.00. Worked for 2 hours.
+-2025-03-27 21.00. Worked for 2 hours.
   -Connected button 2.2. 
 
-  2025-04-03 19.30. Worked for 2 hours.
+-2025-04-03 19.30. Worked for 2 hours.
   -Moved the output of page 1 to the top with the buttons on the bottom.
   -Searched for instructions how to update the buttons. 
+
+-2025-04-16 10.00. Worked for 1 hour.
+  -Added a headline.
+  -Made the left button update the text on the screen.   
