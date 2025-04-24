@@ -13,8 +13,8 @@ Type your name here.<br>
 <h2 id="demo"></h2><br><br>  
 <!--Create two buttons for the book that can be updated-->
 <!--Give the buttons different id:s-->
-<button id="leftButton" onclick="getStep()">Update</button>
-<button id="rightButton">Update</button>
+<button id="leftButton" onclick="getStep()">Left</button>
+<button id="rightButton">Right</button>
 
 <script>
 
@@ -44,9 +44,9 @@ var button1 = document.getElementById("leftButton");
 //Create a variable to find the second button element on the screen.
 var button2 = document.getElementById("rightButton");
 
-//Create an array for all of the pages.
-var page = [page1, page21, page22, page31, page32, page33, page34, page41, page42, page43, page44, page45, page46, page47, page48]
-//Lenght = 15.
+//Create an array for all of the pages except the first one.
+var page = [page21, page22, page31, page32, page33, page34, page41, page42, page43, page44, page45, page46, page47, page48]
+//Lenght = 14.
 
 //Create a variable to access one index in the array.
 var index = 0;
@@ -60,16 +60,29 @@ var index = 0;
     }
 
     //Add the click event to the buttons to run the text functions.
-button1.addEventListener("click", text1);
 button2.addEventListener("click", text2);
 
 //Create a function to change the text on the screen by clicking on the left button.
-    function text1() {
-    //Show the chosen page on the screen.
-    output.innerHTML = page21
-    //Show the chosen page number in the console.
-    console.log("page 2.1")
+    function getStep() {
+    //Check if the index is valid.
+    if (leftButton) {
+        //If the index can be updated then increase the index number by one.
+        index ++;
+    }
+    //Show the current step using another function.
+    showStep();
 }
+
+//Create a function to control the state of the buttons.
+    function updateButtons() {
+
+    }
+
+//Create a function to update the page shown on the screen.
+    function showStep() {
+        //Output the chosen page. 
+        output.innerHTML = page21
+    }
 
 //Create a function to change the text on the screen by clicking on the right button.
     function text2() {
