@@ -36,6 +36,9 @@ var page46 = "-Text- page 4.6";
 var page47 = "-Text- page 4.7";
 var page48 = "-Text- page 4.8";
 
+//Create a empty page to use before "opening" the book.
+var emptyPage = "";
+
 //Create a variable and connect it to the demo element. 
 var output = document.getElementById("demo");
 
@@ -58,6 +61,8 @@ var index = 0;
         var readersName = document.getElementById("username");
         //Show the input in the console. 
         console.log("Username: " + readersName.value);
+        //Output the first page on the screen.
+        output.innerText = page1;
     }
 
 //Add a function to show the next page.
@@ -67,17 +72,17 @@ var index = 0;
         //If the index can be updated then increase the number by one.
         index++;
     }
-    //Show the next page using another function.
-    function showStep() {};
+     //Show the next page using another function.
+     function showStep() {};
     }
 
 //Make a function to update the screen.
     function showStep() {
-    //Output the current step from the step array.
-    output.innerText = page21;
+    //Output the current page.
+    output.innerText = emptyPage;
     }
 
-//Output the first page using the function to show the current page.
-showStep(page21);
+//Output the second page using the function to show the current page.
+showStep(emptyPage);
 
 </script>
