@@ -71,24 +71,29 @@ var index = 0;
     }
 
 
-//Add a function to show the next page.
+//Add a function to show the next page if click on the left button.
     function getStep() {
         //Add the click event to the button to run the getStep function.
         var output = document.getElementById("demo");
         if(left) {
         //Show the chosen page on the screen.
-        output.innerText = page21
+        output.innerText = page21;
         //Show the chosen page number in the console.
-        console.log("page 2.1")
-        }
-        if(right) {
-        //Show the chosen page on the screen.
-        output.innerText = page22
-        //Show the chosen page number in the console.
-        console.log("page 2.2")
-        }
+        console.log("page 2.1");
+        };
     }
     
+ //Add a function to show the next page if click on the right button.
+    function getStep() {
+    //Add the click event to the button to run the getStep function.
+    var output = document.getElementById("demo");
+    if(right) {
+    //Show the chosen page on the screen.
+    output.innerText = page22;
+    //Show the chosen page in the console.
+    console.log("page 2.2");
+    };
+    }    
 
 //Make a function to update the screen.
     function showStep() {
