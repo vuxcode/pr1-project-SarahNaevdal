@@ -8,7 +8,7 @@ Type your name here:<br>
 <button onclick="getInput()">Enter</button>
 
 <!--Create a headline-->
-<h1 id="hello">Hello</h1>
+<h1 id="hello"></h1>
 <!--Create a text element, that can be updated-->
 <h2 id="demo"></h2><br><br>  
 <!--Create two buttons for the book that can be updated-->
@@ -62,6 +62,8 @@ var readersName = document.getElementById("username");
     function getInput() {
         //Show the input in the console. 
         console.log("Username: " + readersName.value);
+        //Output the users name on the screen.
+        helloName.innerText = "Hello " + readersName.value + "!"; 
         //Clear the text box when pushing "Enter". 
         readersName.value = "";
         //Output the first page on the screen.
@@ -69,6 +71,8 @@ var readersName = document.getElementById("username");
         //Show the chosen page number in the console.
         console.log("page 1")
     }
+
+//Add a function to output the users name on the screen.
 
 //Add a function to show the next page if click on the left button.
     function getStep() {
