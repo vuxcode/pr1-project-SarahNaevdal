@@ -9,7 +9,7 @@ Type your name here:<br>
 
 <!--Create a headline-->
 <h1 id="hello"></h1>
-<!--Create a text element, that can be updated-->
+<!--Create a text element, that can be updated, to output the text of the book-->
 <h2 id="demo"></h2><br><br>  
 <!--Create two buttons for the book that can be updated-->
 <!--Give the buttons different id:s-->
@@ -51,12 +51,19 @@ var right = document.getElementById("rightButton");
 //Find the textbox and connect it to a variable.
 var readersName = document.getElementById("username"); 
 
-//Create an array for all of the pages except the empty page.
-var page = [page1, page21, page22, page31, page32, page33, page34, page41, page42, page43, page44, page45, page46, page47, page48]
-//Lenght = 15.
+//Create arrays for all different possible ways to ger thrue the book.
+
+var line1 = [emptyPage, page1, page21, page31, page41]
+var line2 = [emptyPage, page1, page21, page31, page42]
+var line3 = [emptyPage, page1, page21, page32, page43]
+var line4 = [emptyPage, page1, page21, page32, page44]
+var line5 = [emptyPage, page1, page22, page33, page45]
+var line6 = [emptyPage, page1, page22, page33, page46]
+var line7 = [emptyPage, page1, page22, page34, page47]
+var line8 = [emptyPage, page1, page22, page34, page48]
+//Lenght: 5.
 
 //Create a variable to access one index in the array.
-// 
 var index = 0;
 
 //Add a function to get the users input (name).
@@ -68,51 +75,61 @@ var index = 0;
         //Clear the text box when pushing "Enter". 
         readersName.value = "";
         //Output the first page on the screen.
-        output.innerText = page[index];
+        //output.innerText = page[index];
         //Show the chosen page number in the console.
-        console.log("page 1")
+        //console.log("page 1")
+    }
+
+//Add a function for sequence1
+    function getStep() {
+        if(index < line1.lenght -1) {
+        //If the index can be updated then increase the index number by one.
+        index++;
+        }
+        //Show the current step using another function.
+        ShowStep();
     }
 
 //Add a function to show the next page if click on the left button.
-    function getStep(xx) {
-        console.log(xx)
+   // function getStep(xx) {
+//console.log(xx)
         //Add the click event to the button to run the getStep function.
-        if(left) {
+      //  if(left) {
         //Show the chosen page on the screen.
-        output.innerText = page[index];
+      //  output.innerText = page[index];
         //Show the chosen page number in the console.
-        console.log("page 2.1");
-        };
-    }
+       // console.log("page 2.1");
+       // };
+   // }
     
  //Add a function to show the next page if click on the right button.
-    function getPage(yy) {
-    console.log(yy)
+  //  function getPage(yy) {
+   // console.log(yy)
     //Add the click event to the button to run the getStep function.
-    if(right) {
-    index++
+    //if(right) {
+    //index++
     //Show page 2.2 on the screen.
-    output.innerText = page[index];
+    //output.innerText = page[index];
     //Show page in 2.2 in the console.
-    console.log("page 2.2");
-    };
-    if(right && left) {
+    //console.log("page 2.2");
+    //};
+    //if(right && left) {
     //show page 3.2 on the screen 
-    output.innerText = page32;
+    //output.innerText = page32;
     //Show the page in the console.
-    console.log("page 3.2");
-    };
-    }    
+    //console.log("page 3.2");
+    //};
+   // }    
 
     
     
 //Make a function to update the screen.
     function showStep() {
     //Output the current page.
-    output.innerText = emptyPage;
+    output.innerText = line1[index];
     }
 
 //Output the empty page using the function to show the current page.
-showStep(emptyPage);
+showStep();
 
 </script>
