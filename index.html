@@ -13,12 +13,13 @@ Type your name here:<br>
 <h2 id="demo"></h2><br><br>  
 <!--Create two buttons for the book that can be updated-->
 <!--Give the buttons different id:s-->
-<button id="leftButton" onclick="getStep('left')">Left</button>
-<button id="rightButton" onclick="getStep('right')">Right</button>
+<!--Add the same function to both buttons-->
+<button id="leftButton" onclick="getPage('onclick left button')">Left</button>
+<button id="rightButton" onclick="getPage('onclick right button')">Right</button>
 
 <script>
 
-//Create a variable for each new page. 
+//Create a variable for each page. 
 var emptyPage = "";
 var page1 = "-Text- page 1";
 var page21 = "-Text- page 2.1";
@@ -51,15 +52,15 @@ var right = document.getElementById("rightButton");
 //Find the textbox and connect it to a variable.
 var readersName = document.getElementById("username"); 
 
-//Create arrays for all different possible ways to ger thrue the book.
-var line1 = [emptyPage, page1, page21, page31, page41]
-var line2 = [emptyPage, page1, page21, page31, page42]
-var line3 = [emptyPage, page1, page21, page32, page43]
-var line4 = [emptyPage, page1, page21, page32, page44]
-var line5 = [emptyPage, page1, page22, page33, page45]
-var line6 = [emptyPage, page1, page22, page33, page46]
-var line7 = [emptyPage, page1, page22, page34, page47]
-var line8 = [emptyPage, page1, page22, page34, page48]
+//Create arrays for all different possible sequences to ger thru the book.
+var line1 = [emptyPage, page1, page21, page31, page41];
+var line2 = [emptyPage, page1, page21, page31, page42];
+var line3 = [emptyPage, page1, page21, page32, page43];
+var line4 = [emptyPage, page1, page21, page32, page44];
+var line5 = [emptyPage, page1, page22, page33, page45];
+var line6 = [emptyPage, page1, page22, page33, page46];
+var line7 = [emptyPage, page1, page22, page34, page47];
+var line8 = [emptyPage, page1, page22, page34, page48];
 //Lenght: 5.
 
 //Create a variable to access one index in the array.
@@ -69,7 +70,6 @@ var index = 0;
 for(var index = 0; index < line1.length; index++) {
     //Output the current step.
     console.log(line1[index]);
-
 }
 
 //Add a function to get the users input (name).
@@ -81,21 +81,21 @@ for(var index = 0; index < line1.length; index++) {
         //Clear the text box when pushing "Enter". 
         readersName.value = "";
         //Output the first page on the screen.
-        //output.innerText = page[index];
+        //output.innerText = [index];
         //Show the chosen page number in the console.
-        //console.log("page 1")
+        //console.log(emptyPage)
     }
 
 //Add a function for line 1.
-    function getStep(xx) {
+    function getPage(whatBtn) {
         //Show the current page number in the console.
-        console.log(xx)
-        if(right && right && right) {
+        console.log(whatBtn)
+        if(index < line1.length - 1) {
         //If the index can be updated then increase the index number by one.
         index++;
         }
         //Show the current step using another function.
-        ShowStep(index < line1.length -1);
+        showPage();
     }
 
 //Add a function to show the next page if click on the left button.
@@ -130,12 +130,12 @@ for(var index = 0; index < line1.length; index++) {
    // }    
 //Make a function to update the screen.
 
-function showStep() {
+function showPage() {
     //Output the current page.
     output.innerText = line1[index];
     }
 
 //Output the empty page using the function to show the current page.
-showStep();
+showPage();
 
 </script>
