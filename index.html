@@ -63,6 +63,9 @@ var line7 = [emptyPage, page1, page22, page34, page47];
 var line8 = [emptyPage, page1, page22, page34, page48];
 //Lenght: 5.
 
+var seq1 = [right, right, right, right];
+//Lenght: 4. 
+
 //Create a variable to access one index in the array.
 var index = 0;
 
@@ -90,11 +93,9 @@ var index = 0;
     function getPage(xx) {
         //Show the current page number in the console.
         console.log(xx)
-        if(right && right && right && right) {
-        if(index < line1.length - 1) {
+        if(index < line1.length - 1 && seq1) {
         //If the index can be updated then increase the index number by one.
         index++;
-        }
         };
         //Show the current step using another function.
         showPage();
