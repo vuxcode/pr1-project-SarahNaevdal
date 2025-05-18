@@ -21,14 +21,14 @@ Type your name here:<br>
  
 //Create a variable for each page. 
 var emptyPage = "";
-var page1 = "It is a beautiful day in Adventure Bay but Ryder doesn't feel very well today. He caught a fever and he feel dissy trying to stand up. He reaches out for his puppy-pad and calls his good friend" + ". Off course" + "will help! I'll be right there he says!";
-var page21 = username + "arrives at the tower where all the puppies are already waiting.";
+var page1 = "It is a beautiful day in Adventure Bay but Ryder doesn't feel very well today. He caught a fever and he feel dissy trying to stand up. He reaches out for his puppy-pad and calls his good friend" + ". Off course" + "will help! I'll be right there he says! Puppies waiting / Tower empty";
+var page21 = + "arrives at the tower where all the puppies are already waiting. Get urgent alarm / Get alarm";
 var page22 = "When" + "arrives the tower is empty. He gets inside to see if there are any alarms. ";  
-var page31 = "-Text- page 3.1";
+var page31 = "-XXXX- tells Paw patrol that he/she is in charge today. But -XXXX- doesn't even get to finish the sentence before there is an alarm. There is a fire on a party-boat with lots of passengers. Who will -XXXX- send? Zuma & Marshall / Rubble & Skye";
 var page32 = "-Text- page 3.2";
 var page33 = "-Text- page 3.3";
 var page34 = "-Text- page 3.4";
-var page41 = "-Text- page 4.1";
+var page41 = "Zuma and Marshall heads to the lake where the boat is. Zuma sends out life buoys to the passengers and as soon they got everyone on land Marshall uses his water cannons to put out the fire. Great job pups! Says -XXXX- ";
 var page42 = "-Text- page 4.2";
 var page43 = "-Text- page 4.3";
 var page44 = "-Text- page 4.4";
@@ -52,7 +52,9 @@ var right = document.getElementById("rightButton");
 //Find the textbox and connect it to a variable.
 var readersName = document.getElementById("username");
 
-var username = readersName.value; 
+//Create an array for all pages of the book.
+var allPages = [emptyPage, page1, page21, page22, page31, page32, page33, page34, page41, page42, page43, page44, page45, page46, page47, page48];
+//Lenght: 16
 
 //Create arrays for all different possible sequences to ger thru the book.
 var line1 = [emptyPage, page1, page21, page31, page41];
@@ -97,12 +99,13 @@ var index = 0;
         //output.innerText = [0]; 
         //Show the chosen page number in the console.
         //console.log(emptyPage)
-    };
+        }
 
 //Add a function for line 1.
     function getPage(xx) {
         //Show the current page number in the console.
-        console.log(xx)
+        console.log(xx);
+        //line1.innerText
         if(index < line1.length - 1 && seq1) {
         //If the index can be updated then increase the index number by one.
         index++;
@@ -110,6 +113,7 @@ var index = 0;
         //Show the current step using another function.
         showPage();
         }
+
 //Add a function to show the next page if click on the left button.
    // function getStep(xx) {
 //console.log(xx)
