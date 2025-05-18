@@ -18,15 +18,12 @@ Type your name here:<br>
 <button id="rightButton" onclick="getPage('onclick right button')">Right</button>
 
 <script>
-
-//Find the textbox and connect it to a variable.
-var readersName = document.getElementById("username"); 
-
+ 
 //Create a variable for each page. 
 var emptyPage = "";
-var page1 = "It is a beautiful day in Adventure Bay but Ryder doesn't feel very well today. He caught a fever and he feel dissy trying to stand up. He reaches out for his puppy-pad and calls his good friend" + readersName.value + ". Off course" + readersName.input + "will help! I'll be right there he says!    ";
+var page1 = "It is a beautiful day in Adventure Bay but Ryder doesn't feel very well today. He caught a fever and he feel dissy trying to stand up. He reaches out for his puppy-pad and calls his good friend" + ". Off course" + "will help! I'll be right there he says!";
 var page21 = readersName.value + "arrives at the tower where all the puppies are already waiting.";
-var page22 = "When" + readersName.value + "arrives the tower is empty. He gets inside to see if there are any alarms. ";  
+var page22 = "When" + "arrives the tower is empty. He gets inside to see if there are any alarms. ";  
 var page31 = "-Text- page 3.1";
 var page32 = "-Text- page 3.2";
 var page33 = "-Text- page 3.3";
@@ -52,6 +49,8 @@ var left = document.getElementById("leftButton");
 //Create a variable to find the second button element on the screen.
 var right = document.getElementById("rightButton");
 
+//Find the textbox and connect it to a variable.
+var readersName = document.getElementById("username");
 
 //Create arrays for all different possible sequences to ger thru the book.
 var line1 = [emptyPage, page1, page21, page31, page41];
@@ -77,7 +76,7 @@ var seq8 = [right, left, left, left];
 
 //Create a variable to access one index in the array.
 var index = 0;
-
+helloName.innerText = "Hello " + readersName.value + "!";
 //Test!
 //for(var index = 0; index < line1.length; index++) {
     //Output the current step.
@@ -89,14 +88,14 @@ var index = 0;
         //Show the input in the console. 
         console.log("Username: " + readersName.value);
         //Output the users name on the screen.
-        helloName.innerText = "Hello " + readersName.value + "!"; 
+         
         //Clear the text box when pushing "Enter". 
         readersName.value = "";
         //Output the first page on the screen.
         //output.innerText = [0]; 
         //Show the chosen page number in the console.
         //console.log(emptyPage)
-    }
+    };
 
 //Add a function for line 1.
     function getPage(xx) {
