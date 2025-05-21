@@ -18,7 +18,7 @@ Type your name here:
 <!--Create a text element, that can be updated, to output the text of the book-->
 <h2 id="demo"></h2><br><br> 
 <!--Create a button to start te book-->
-<button id="startButton" onclick="startAdventure()">Start the adventure</button>
+<button id="startButton" onclick="startAdventure()" style="display: none;">Start the adventure</button>
 
 <!--Create two buttons for the book that can be updated and hidden-->
 <!--Give the buttons different id:s-->
@@ -123,13 +123,15 @@ var index = 0;
         //Output the first page on the screen.
         output.innerHTML = welcomePage; 
         //Hide the 'Start adventure' button.
-        startButton.style.display = "none";
+        startButton.style.display = "inline-block";
         //Show navigation buttons.
-        left.style.display = "inline-block";
-        right.style.display = "inline-block";
+        left.style.display = "none";
+        right.style.display = "none";
         restartButton.style.display = "none";
         //Reset index to zero. 
         index = 0; 
+        choices = [];
+        currentLine = line1;
         //Show the input in the console. 
         console.log("Username: " + playerName);
          //Show the chosen page number in the console.
