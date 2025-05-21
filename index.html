@@ -19,8 +19,8 @@ Type your name here:
 <!--Create two buttons for the book that can be updated-->
 <!--Give the buttons different id:s-->
 <!--Add the same function to both buttons-->
-<button id="leftButton" onclick="getPage('onclick left button')">Left</button>
-<button id="rightButton" onclick="getPage('onclick right button')">Right</button>
+<button id="leftButton" onclick="getPage('left')">Left</button>
+<button id="rightButton" onclick="getPage('right')">Right</button>
 
 <script>
 
@@ -31,9 +31,9 @@ var playerName = "";
 var emptyPage = "";
 var welcomePage = "Welcome to.."
 let page1 = "It is a beautiful day in Adventure Bay but Ryder doesn't feel very well today.<br>He caught a fever and he feel dissy trying to stand up.<br>He reaches out for his puppy-pad and calls his good friend -XXXX-.<br>Off course -XXXX- will help! I'll be right there says -XXXX-!<br><br>Puppies waiting / Tower empty";
-var page21 = "reader arrives at the tower where all the puppies are already waiting.<br><br>Get urgent alarm / Get alarm";
+var page21 = "-XXXX- arrives at the tower where all the puppies are already waiting.<br><br>Get urgent alarm / Get alarm";
 var page22 = "When -XXXX- arrives the tower is empty.<br>-XXXX- gets inside to see if there are any alarms. ";  
-var page31 = "-XXXX- tells Paw patrol that he/she is in charge today.<br>But -XXXX- doesn't even get to finish the sentence before there is an alarm.<br>There is a fire on a party-boat with lots of passengers.<br>Who will -XXXX- send?<br><br>Zuma & Marshall / Rubble & Skye";
+var page31 = "-XXXX- tells Paw Patrol that he/she is in charge today.<br>But -XXXX- does not even get to finish the sentence before there is an alarm!<br>There is a fire on a party-boat with lots of passengers.<br>Who will -XXXX- send?<br><br>Zuma & Marshall / Rubble & Skye";
 var page32 = "-Text- page 3.2";
 var page33 = "-Text- page 3.3";
 var page34 = "-Text- page 3.4";
@@ -65,6 +65,9 @@ var readersName = document.getElementById("username");
 var allPages = [emptyPage, page1, page21, page22, page31, page32, page33, page34, page41, page42, page43, page44, page45, page46, page47, page48];
 //Lenght: 16
 
+//Create an global array
+var choices = [];
+
 //Create arrays for all different possible sequences to ger thru the book.
 var line1 = [emptyPage, page1, page21, page31, page41];
 var line2 = [emptyPage, page1, page21, page31, page42];
@@ -75,6 +78,9 @@ var line6 = [emptyPage, page1, page22, page33, page46];
 var line7 = [emptyPage, page1, page22, page34, page47];
 var line8 = [emptyPage, page1, page22, page34, page48];
 //Lenght: 5.
+
+//
+var currentLine = line1; 
 
 //Create arrays for the sequences of the buttons.
 var seq1 = [right, right, right, right];
@@ -128,18 +134,46 @@ var index = 0;
         //document.getElementById("demo").innerHTML = current;       
 
 //Add a function for line 1.
-    function getPage(xx) {
+    function getPage(choice) {
+        //Hide the 'Hello message'. 
         helloName.innerText = "";
-        //Show the current page number in the console.
-        console.log(xx);
-        //line1.innerText
-        if(index < line1.length - 1) {
-        //If the index can be updated then increase the index number by one.
+        //Save the users choise.
+        choices.push(choice);
+        //Increase the index if in the middle of the book. 
+        if(index < 4) {
         index++;
-        };
+        showPage();
+        }
+
+        //When the user have made four choices, chose the way.
+        if (choices.length === 4) { 
+        //Compare the choices with sequences.
+        if (arraysEqual(choices, ["right", "right", "right", "right"])) currentLine = line1;
+        else if (arraysEqual(choices, ["right", "right", "right", "left"])) currentLine = line2;
+        else if (arraysEqual(choices, ["right", "right", "left", "right"])) currentLine = line3;
+        else if (arraysEqual(choices, ["right", "right", "left", "left"])) currentLine = line4;
+        else if (arraysEqual(choices, ["right", "left", "right", "right"])) currentLine = line5;
+        else if (arraysEqual(choices, ["right", "left", "right", "left"])) currentLine = line6;
+        else if (arraysEqual(choices, ["right", "left", "left", "right"])) currentLine = line7;
+        else if (arraysEqual(choices, ["right", "left", "left", "left"])) currentLine = line8;
+
+        index = 0; //Start a new story from the beginning.
+        
+        //Show the current page number in the console.
+        //console.log(xx);
+        //line1.innerText
+        //if(index < line1.length - 1) {
+        //If the index can be updated then increase the index number by one.
+        //index++;
+        //};
         //Show the current step using another function.
         showPage();
         }
+    }
+
+    function arraysEqual(a, b) {
+      return a.length === b.length && a.every((val, index) => val === b[index])
+    }
 
 //Add a function to show the next page if click on the left button.
    // function getStep(xx) {
@@ -176,12 +210,10 @@ var index = 0;
 function showPage() {
     //Output the current page.
     //(output.innerHTML = line1[index];)
-    let currentText = line1[index];
+    let currentText = currentLine[index];
     //Replace 'reader' with the input from the textbox.
     //let current = inputText
-    currentText = currentText 
-    .replace(/reader/g, playerName)
-    .replace(/-XXXX-/g, playerName);
+    currentText = currentText.replace(/-XXXX-/g, playerName);
 
     output.innerHTML = currentText;
   }
