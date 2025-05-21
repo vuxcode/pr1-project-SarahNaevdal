@@ -194,6 +194,24 @@ var index = 0;
         }
     }
 
+    //Add a function to restart the book.
+    function restart() {
+        //Reset index an choices.
+        index = 0;
+        choices = [];
+        currentLine = line1;
+
+        //Show the 'welcome' page again.
+        output.innerHTML = welcomePage;
+        helloName.innerText = "Hello" + playerName + "!";
+
+        //Hide the navigation buttons and show the 'Start' button.
+        left.style.display = "none";
+        right.style.display = "none";
+        restartButton.style.display = "none";
+        startButton.style.display = "inline-block";
+    }
+
     function arraysEqual(a, b) {
       return a.length === b.length && a.every((val, index) => val === b[index])
     }
