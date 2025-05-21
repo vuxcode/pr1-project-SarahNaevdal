@@ -23,18 +23,21 @@ Type your name here:
 <button id="rightButton" onclick="getPage('onclick right button')">Right</button>
 
 <script>
- 
+
+//Save the users input (name) in a variable whe the user push 'Enter'.
+var playerName = "";
+
 //Create a variable for each page. 
 var emptyPage = "";
 var welcomePage = "Welcome to.."
-let page1 = "It is a beautiful day in Adventure Bay but Ryder doesn't feel very well today.<br>He caught a fever and he feel dissy trying to stand up.<br>He reaches out for his puppy-pad and calls his good friend.<br>Off course will help! I'll be right there says!<br><br>Puppies waiting / Tower empty";
-var page21 = "arrives at the tower where all the puppies are already waiting. Get urgent alarm / Get alarm";
-var page22 = "When" + "arrives the tower is empty. He gets inside to see if there are any alarms. ";  
-var page31 = "-XXXX- tells Paw patrol that he/she is in charge today. But -XXXX- doesn't even get to finish the sentence before there is an alarm. There is a fire on a party-boat with lots of passengers. Who will -XXXX- send? Zuma & Marshall / Rubble & Skye";
+let page1 = "It is a beautiful day in Adventure Bay but Ryder doesn't feel very well today.<br>He caught a fever and he feel dissy trying to stand up.<br>He reaches out for his puppy-pad and calls his good friend -XXXX-.<br>Off course -XXXX- will help! I'll be right there says -XXXX-!<br><br>Puppies waiting / Tower empty";
+var page21 = "reader arrives at the tower where all the puppies are already waiting.<br><br>Get urgent alarm / Get alarm";
+var page22 = "When -XXXX- arrives the tower is empty.<br>-XXXX- gets inside to see if there are any alarms. ";  
+var page31 = "-XXXX- tells Paw patrol that he/she is in charge today.<br>But -XXXX- doesn't even get to finish the sentence before there is an alarm.<br>There is a fire on a party-boat with lots of passengers.<br>Who will -XXXX- send?<br><br>Zuma & Marshall / Rubble & Skye";
 var page32 = "-Text- page 3.2";
 var page33 = "-Text- page 3.3";
 var page34 = "-Text- page 3.4";
-var page41 = "Zuma and Marshall heads to the lake where the boat is. Zuma sends out life buoys to the passengers and as soon they got everyone on land Marshall uses his water cannons to put out the fire. Great job pups! Says -XXXX- ";
+var page41 = "Zuma and Marshall heads to the lake where the boat is at.<br>Zuma shoots out life buoys to the passengers and as soon they get<br>everyone on land Marshall uses his water cannons to put out the fire.<br>Great job pups! Says -XXXX- ";
 var page42 = "-Text- page 4.2";
 var page43 = "-Text- page 4.3";
 var page44 = "-Text- page 4.4";
@@ -98,20 +101,35 @@ var index = 0;
 
 //Add a function to get the users input (name).
     function getInput() {
-        //Show the input in the console. 
-        console.log("Username: " + readersName.value);
+        //Save the users input. 
+        playerName = readersName.value.trim();
         //Output the users name on the screen.
-        helloName.innerText = "Hello " + readersName.value + "!";
+        helloName.innerText = "Hello " + playerName + "!";
         //Clear the text box when pushing "Enter". 
         readersName.value = "";
         //Output the first page on the screen.
-        output.innerText = welcomePage; 
-        //Show the chosen page number in the console.
+        output.innerHTML = welcomePage; 
+        //Reset index to zero. 
+        index = 0; 
+        //Show the input in the console. 
+        console.log("Username: " + playerName);
+         //Show the chosen page number in the console.
         console.log("Welcome page")
         }
 
+//Add a function to control the text of the book.
+       // function getText() {
+
+        //}
+
 //Add a function for line 1.
     function getPage(xx) {
+        //Get the text from the textbox.
+        let inputText = document.getElementById("username").value;
+        //Replace 'reader' with the input from the textbox.
+        let current = inputText.replace(/reader/g, "Adrian");
+        //Show the name in the text of the book.
+        document.getElementById("demo").innerHTML = current;
         //Show the current page number in the console.
         console.log(xx);
         //line1.innerText
