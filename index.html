@@ -27,7 +27,7 @@ Type your name here:
 //Create a variable for each page. 
 var emptyPage = "";
 var welcomePage = "Welcome to.."
-var page1 = "It is a beautiful day in Adventure Bay but Ryder doesn't feel very well today.He caught a fever and he feel dissy trying to stand up. He reaches out for his puppy-pad and calls his good friend" + ". Off course" + "will help! I'll be right there he says! Puppies waiting / Tower empty";
+let page1 = "It is a beautiful day in Adventure Bay but Ryder doesn't feel very well today.<br>He caught a fever and he feel dissy trying to stand up.<br>He reaches out for his puppy-pad and calls his good friend.<br>Off course will help! I'll be right there says!<br><br>Puppies waiting / Tower empty";
 var page21 = "arrives at the tower where all the puppies are already waiting. Get urgent alarm / Get alarm";
 var page22 = "When" + "arrives the tower is empty. He gets inside to see if there are any alarms. ";  
 var page31 = "-XXXX- tells Paw patrol that he/she is in charge today. But -XXXX- doesn't even get to finish the sentence before there is an alarm. There is a fire on a party-boat with lots of passengers. Who will -XXXX- send? Zuma & Marshall / Rubble & Skye";
@@ -158,7 +158,7 @@ var index = 0;
 
 function showPage() {
     //Output the current page.
-    output.innerText = line1[index];
+    output.innerHTML = line1[index];
     }
 
 //Output the empty page using the function to show the current page.
