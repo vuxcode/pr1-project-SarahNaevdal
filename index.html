@@ -27,7 +27,7 @@ Type your name here:
 //Create a variable for each page. 
 var emptyPage = "";
 var welcomePage = "Welcome to.."
-var page1 = "It is a beautiful day in Adventure Bay but Ryder doesn't feel very well today. He caught a fever and he feel dissy trying to stand up. He reaches out for his puppy-pad and calls his good friend" + ". Off course" + "will help! I'll be right there he says! Puppies waiting / Tower empty";
+var page1 = "It is a beautiful day in Adventure Bay but Ryder doesn't feel very well today.He caught a fever and he feel dissy trying to stand up. He reaches out for his puppy-pad and calls his good friend" + ". Off course" + "will help! I'll be right there he says! Puppies waiting / Tower empty";
 var page21 = "arrives at the tower where all the puppies are already waiting. Get urgent alarm / Get alarm";
 var page22 = "When" + "arrives the tower is empty. He gets inside to see if there are any alarms. ";  
 var page31 = "-XXXX- tells Paw patrol that he/she is in charge today. But -XXXX- doesn't even get to finish the sentence before there is an alarm. There is a fire on a party-boat with lots of passengers. Who will -XXXX- send? Zuma & Marshall / Rubble & Skye";
@@ -63,7 +63,7 @@ var allPages = [emptyPage, page1, page21, page22, page31, page32, page33, page34
 //Lenght: 16
 
 //Create arrays for all different possible sequences to ger thru the book.
-var line1 = [emptyPage, welcomePage, page1, page21, page31, page41];
+var line1 = [emptyPage, page1, page21, page31, page41];
 var line2 = [emptyPage, page1, page21, page31, page42];
 var line3 = [emptyPage, page1, page21, page32, page43];
 var line4 = [emptyPage, page1, page21, page32, page44];
@@ -93,6 +93,9 @@ var index = 0;
     //console.log(line1[index]);
 //}
 
+//Show the current page number in the console.
+        console.log("Empty page")
+
 //Add a function to get the users input (name).
     function getInput() {
         //Show the input in the console. 
@@ -102,9 +105,9 @@ var index = 0;
         //Clear the text box when pushing "Enter". 
         readersName.value = "";
         //Output the first page on the screen.
-        //output.innerText = [1]; 
+        output.innerText = welcomePage; 
         //Show the chosen page number in the console.
-        console.log(emptyPage)
+        console.log("Welcome page")
         }
 
 //Add a function for line 1.
@@ -113,6 +116,7 @@ var index = 0;
         console.log(xx);
         //line1.innerText
         if(index < line1.length - 1 && seq1) {
+          helloName.innerText = "";
         //If the index can be updated then increase the index number by one.
         index++;
         };
