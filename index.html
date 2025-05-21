@@ -121,20 +121,19 @@ var index = 0;
        // function getText() {
 
         //}
+//Get the text from the textbox.
+        //let inputText = document.getElementById("username").value;
+       
+        //Show the name in the text of the book.
+        //document.getElementById("demo").innerHTML = current;       
 
 //Add a function for line 1.
     function getPage(xx) {
-        //Get the text from the textbox.
-        let inputText = document.getElementById("username").value;
-        //Replace 'reader' with the input from the textbox.
-        let current = inputText.replace(/reader/g, "Adrian");
-        //Show the name in the text of the book.
-        document.getElementById("demo").innerHTML = current;
+        helloName.innerText = "";
         //Show the current page number in the console.
         console.log(xx);
         //line1.innerText
-        if(index < line1.length - 1 && seq1) {
-          helloName.innerText = "";
+        if(index < line1.length - 1) {
         //If the index can be updated then increase the index number by one.
         index++;
         };
@@ -176,8 +175,16 @@ var index = 0;
 
 function showPage() {
     //Output the current page.
-    output.innerHTML = line1[index];
-    }
+    //(output.innerHTML = line1[index];)
+    let currentText = line1[index];
+    //Replace 'reader' with the input from the textbox.
+    //let current = inputText
+    currentText = currentText 
+    .replace(/reader/g, playerName)
+    .replace(/-XXXX-/g, playerName);
+
+    output.innerHTML = currentText;
+  }
 
 //Output the empty page using the function to show the current page.
 showPage();
