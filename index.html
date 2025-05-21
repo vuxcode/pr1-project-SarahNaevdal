@@ -136,27 +136,37 @@ var index = 0;
         console.log("Welcome page")
         }
 
-//Add a function to control the text of the book.
-       // function getText() {
+//Add a function for when the user starts the book.
+    function startAdventure() {
+      //Make the 'Start' button invisible. 
+      startButton.style.display = "none";
+      //Show the first page.
+      showPage();
+      //Show the navigation buttons. 
+      left.style.display = "inline-block";
+      right.style.display = "inline-block";
 
-        //}
-//Get the text from the textbox.
-        //let inputText = document.getElementById("username").value;
-       
-        //Show the name in the text of the book.
-        //document.getElementById("demo").innerHTML = current;       
-
-//Add a function for line 1.
+        }
+      
+//Add a function that lets the user navigate between the pages.
     function getPage(choice) {
+        //Allow the user to make choices.
+        choices.push(choice.includes("right") ? right : left);
         //Hide the 'Hello message'. 
         helloName.innerText = "";
         //Save the users choise.
         choices.push(choice);
         //Increase the index if in the middle of the book. 
-        if(index < 4) {
+        if(index < currentLine.length -1) {
         index++;
         showPage();
         }
+        //When on the last page: hide the navigation buttons and show the 'restart' button.
+        if (index === currentLine.length -1) {
+          left.style.display = "none";
+          right.style.display = "none";
+          restartButton.style.display = "inline-block";
+        } 
 
         //When the user have made four choices, chose the way.
         if (choices.length === 4) { 
