@@ -1,9 +1,11 @@
 <!--This is an interactive book where the user can choose how the story will continue and end-->
+<!--Create a headline-->
 
 <head>
 <style>
 body {font-family: sans-serif; text-align: center;}  
 </style><br><br>
+
 <!--Ask the user for their name-->
 Type your name here:
 <!--Create a text box-->
@@ -13,10 +15,12 @@ Type your name here:
 </head>
 
 <!--Welcome page-->
-<!--Create a headline-->
 <h1 id="hello"></h1>
+
 <!--Create a text element, that can be updated, to output the text of the book-->
 <h2 id="demo"></h2><br><br> 
+
+<!--Buttons-->
 <!--Create a button to start te book-->
 <button id="startButton" onclick="startAdventure()" style="display: none;">Start the adventure</button>
 
@@ -36,7 +40,7 @@ var playerName = "";
 
 //Create a variable for each page. 
 var emptyPage = "";
-var welcomePage = "Welcome to.."
+var welcomePage = "Welcome to your interactive book:<br><p><span style='color: DodgerBlue; font-size: 36px; font-weight: bold;'>PAW PATROL GETS A NEW BOSS!</span></p><br><br>You will get to chose how the story continues.<br>Press the button below to begin."
 let page1 = "It is a beautiful day in Adventure Bay but Ryder doesn't feel very well today.<br>He caught a fever and he feel dissy trying to stand up.<br>He reaches out for his puppy-pad and calls his good friend -XXXX-.<br>Off course -XXXX- will help! I'll be right there says -XXXX-!<br><br>Puppies waiting / Tower empty";
 var page21 = "-XXXX- arrives at the tower where all the puppies are already waiting.<br><br>Get urgent alarm / Get alarm";
 var page22 = "When -XXXX- arrives the tower is empty.<br>-XXXX- gets inside to see if there are any alarms. ";  
@@ -205,7 +209,7 @@ var index = 0;
 
         //Show the 'welcome' page again.
         output.innerHTML = welcomePage;
-        helloName.innerText = "Hello" + playerName + "!";
+        helloName.innerText = "Hello " + playerName + "!";
 
         //Hide the navigation buttons and show the 'Start' button.
         left.style.display = "none";
