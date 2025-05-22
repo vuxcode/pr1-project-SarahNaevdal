@@ -21,7 +21,8 @@ Type your name here:
 <h2 id="demo"></h2><br><br> 
 
 <!--Buttons-->
-<!--Create a button to start te book-->
+
+<!--Create a button to start the book-->
 <button id="startButton" onclick="startAdventure()" style="display: none;">Start the adventure</button>
 
 <!--Create two buttons for the book that can be updated and hidden-->
@@ -57,7 +58,7 @@ var page46 = "-Text- page 4.6";
 var page47 = "-Text- page 4.7";
 var page48 = "-Text- page 4.8";
 
-//Create a variable and connect it to the Hello element
+//Create a variable and connect it to the Hello element.
 var helloName = document.getElementById("hello"); 
 
 //Create a variable and connect it to the Demo element. 
@@ -215,6 +216,7 @@ function showPage() {
     //Replace 'reader' with the input from the textbox.
     currentText = currentText.replace(/Carlos/g, playerName);
     output.innerHTML = currentText;
+    console.log("index " + index)
   }
 
 </script>
