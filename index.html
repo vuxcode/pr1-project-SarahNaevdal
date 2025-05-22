@@ -40,15 +40,15 @@ var playerName = "";
 
 //Create a variable for each page. 
 var emptyPage = "";
-var welcomePage = "Welcome to your interactive book:<br><p><span style='color: DodgerBlue; font-size: 36px; font-weight: bold;'>PAW PATROL GETS A NEW BOSS!</span></p><br><br>You will get to chose how the story continues.<br>Press the button below to begin."
-let page1 = "It is a beautiful day in Adventure Bay but Ryder doesn't feel very well today.<br>He caught a fever and he feel dissy trying to stand up.<br>He reaches out for his puppy-pad and calls his good friend -XXXX-.<br>Off course -XXXX- will help! I'll be right there says -XXXX-!<br><br>Puppies waiting / Tower empty";
-var page21 = "-XXXX- arrives at the tower where all the puppies are already waiting.<br><br>Get urgent alarm / Get alarm";
-var page22 = "When -XXXX- arrives the tower is empty.<br>-XXXX- gets inside to see if there are any alarms. ";  
-var page31 = "-XXXX- tells Paw Patrol that he/she is in charge today.<br>But -XXXX- does not even get to finish the sentence before there is an alarm!<br>There is a fire on a party-boat with lots of passengers.<br>Who will -XXXX- send?<br><br>Zuma & Marshall / Rubble & Skye";
+var welcomePage = "Welcome to your interactive book:<br><p><span style='color: DodgerBlue; font-size: 36px; font-weight: bold;'>PAW PATROL GETS A NEW LEADER!</span></p><br><br>You will get to chose how the story continues.<br>Press the button below to begin."
+let page1 = "It is a beautiful day in Adventure Bay but Ryder doesn't feel very well today.<br>He caught a fever and he feel dissy trying to stand up.<br>He reaches out for his puppy-pad and calls his good friend Carlos.<br>Off course Carlos will help! I'll be right there says Carlos!<br><br>Puppies waiting / Tower empty";
+var page21 = "Carlos arrives at the tower where all the puppies are already waiting.<br><br>Get urgent alarm / Get alarm";
+var page22 = "When Carlos arrives the tower is empty.<br>Carlos gets inside to see if there are any alarms. ";  
+var page31 = "Carlos tells Paw Patrol that he/she is in charge today.<br>But Carlos does not even get to finish the sentence before there is an alarm!<br>There is a fire on a party-boat with lots of passengers.<br>Who will Carlos send?<br><br>Zuma & Marshall / Rubble & Skye";
 var page32 = "-Text- page 3.2";
 var page33 = "-Text- page 3.3";
 var page34 = "-Text- page 3.4";
-var page41 = "Zuma and Marshall heads to the lake where the boat is at.<br>Zuma shoots out life buoys to the passengers and as soon they get<br>everyone on land Marshall uses his water cannons to put out the fire.<br>Great job pups! Says -XXXX- ";
+var page41 = "Zuma and Marshall heads to the lake where the boat is at.<br>Zuma shoots out life buoys to the passengers and as soon they get<br>everyone on land Marshall uses his water cannons to put out the fire.<br>Great job pups! Says Carlos.<br><br>'No job is to big, no pups are to small!'<br>'If you are stuck on a burning boat, just yelp for help!'";
 var page42 = "-Text- page 4.2";
 var page43 = "-Text- page 4.3";
 var page44 = "-Text- page 4.4";
@@ -72,23 +72,19 @@ var right = document.getElementById("rightButton");
 //Find the textbox and connect it to a variable.
 var readersName = document.getElementById("username");
 
-//Create an array for all pages of the book.
-var allPages = [emptyPage, page1, page21, page22, page31, page32, page33, page34, page41, page42, page43, page44, page45, page46, page47, page48];
-//Lenght: 16
-
 //Create an global array
 var choices = [];
 
 //Create arrays for all different possible sequences to ger thru the book.
-var line1 = [emptyPage, page1, page21, page31, page41];
-var line2 = [emptyPage, page1, page21, page31, page42];
-var line3 = [emptyPage, page1, page21, page32, page43];
-var line4 = [emptyPage, page1, page21, page32, page44];
-var line5 = [emptyPage, page1, page22, page33, page45];
-var line6 = [emptyPage, page1, page22, page33, page46];
-var line7 = [emptyPage, page1, page22, page34, page47];
-var line8 = [emptyPage, page1, page22, page34, page48];
-//Lenght: 5.
+var line1 = [page1, page21, page31, page41];
+var line2 = [page1, page21, page31, page42];
+var line3 = [page1, page21, page32, page43];
+var line4 = [page1, page21, page32, page44];
+var line5 = [page1, page22, page33, page45];
+var line6 = [page1, page22, page33, page46];
+var line7 = [page1, page22, page34, page47];
+var line8 = [page1, page22, page34, page48];
+//Lenght: 4.
 
 //
 var currentLine = line1; 
@@ -140,7 +136,7 @@ var index = 0;
         console.log("Username: " + playerName);
          //Show the chosen page number in the console.
         console.log("Welcome page")
-        }
+    }
 
 //Add a function for when the user starts the book.
     function startAdventure() {
@@ -151,31 +147,15 @@ var index = 0;
       //Show the navigation buttons. 
       left.style.display = "inline-block";
       right.style.display = "inline-block";
-
-        }
+    }
       
 //Add a function that lets the user navigate between the pages.
     function getPage(choice) {
-        //Allow the user to make choices.
-        choices.push(choice.includes("right") ? right : left);
         //Hide the 'Hello message'. 
         helloName.innerText = "";
         //Save the users choise.
         choices.push(choice);
-        //Increase the index if in the middle of the book. 
-        if(index < currentLine.length -1) {
-        index++;
-        console.log("page " + index)
-        showPage();
-        }
-        //When on the last page: hide the navigation buttons and show the 'restart' button.
-        if (index === currentLine.length -1) {
-          left.style.display = "none";
-          right.style.display = "none";
-          restartButton.style.display = "inline-block";
-        } 
-
-        //When the user have made four choices, chose the way.
+  //When the user have made four choices, chose the way.
         if (choices.length === 4) { 
         //Compare the choices with sequences.
         if (arraysEqual(choices, ["right", "right", "right", "right"])) currentLine = line1;
@@ -189,9 +169,23 @@ var index = 0;
 
         index = 0; //Start a new story from the beginning.
         showPage();
-        }
-    }
+        return; 
+        } 
 
+        //Increase index by one.
+        index++;
+
+        //Show new page.
+        showPage();
+
+        //When on the last page: hide the navigation buttons and show the 'restart' button.
+        if (index === currentLine.length -1) {
+          left.style.display = "none";
+          right.style.display = "none";
+          restartButton.style.display = "inline-block";
+        }
+      }
+    
     //Add a function to restart the book.
     function restart() {
         //Reset index an choices.
@@ -217,16 +211,10 @@ var index = 0;
 //Make a function to update the screen.
 function showPage() {
     //Output the current page.
-    //(output.innerHTML = line1[index];)
     let currentText = currentLine[index];
     //Replace 'reader' with the input from the textbox.
-    //let current = inputText
-    currentText = currentText.replace(/-XXXX-/g, playerName);
-
+    currentText = currentText.replace(/Carlos/g, playerName);
     output.innerHTML = currentText;
   }
-
-//Output the empty page using the function to show the current page.
-showPage();
 
 </script>
