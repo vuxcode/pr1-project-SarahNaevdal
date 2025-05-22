@@ -1,5 +1,4 @@
 <!--This is an interactive book where the user can choose how the story will continue and end-->
-<!--Create a headline-->
 
 <head>
 <style>
@@ -64,10 +63,10 @@ var helloName = document.getElementById("hello");
 //Create a variable and connect it to the Demo element. 
 var output = document.getElementById("demo");
 
-//Create a variable to find the first button element on the screen.
+//Create a variable to find the left button element on the screen.
 var left = document.getElementById("leftButton");
 
-//Create a variable to find the second button element on the screen.
+//Create a variable to find the right button element on the screen.
 var right = document.getElementById("rightButton");
 
 //Find the textbox and connect it to a variable.
@@ -91,15 +90,15 @@ var line8 = [page1, page22, page34, page48];
 var currentLine = line1; 
 
 //Create arrays for the sequences of the buttons.
-var seq1 = [right, right, right, right];
-var seq2 = [right, right, right, left];
-var seq3 = [right, right, left, right];
-var seq4 = [right, right, left, left];
-var seq5 = [right, left, right, right];
-var seq6 = [right, left, right, left];
-var seq7 = [right, left, left, right];
-var seq8 = [right, left, left, left];
-//Lenght: 4. 
+var seq1 = [right, right, right];
+var seq2 = [right, right, left];
+var seq3 = [right, left, right];
+var seq4 = [right, left, left];
+var seq5 = [left, right, right];
+var seq6 = [left, right, left];
+var seq7 = [left, left, right];
+var seq8 = [left, left, left];
+//Lenght: 3. 
 
 //Create a variable to access one index in the array.
 var index = 0;
@@ -159,14 +158,14 @@ var index = 0;
   //When the user have made four choices, chose the way.
         if (choices.length === 4) { 
         //Compare the choices with sequences.
-        if (arraysEqual(choices, ["right", "right", "right", "right"])) currentLine = line1;
-        else if (arraysEqual(choices, ["right", "right", "right", "left"])) currentLine = line2;
-        else if (arraysEqual(choices, ["right", "right", "left", "right"])) currentLine = line3;
-        else if (arraysEqual(choices, ["right", "right", "left", "left"])) currentLine = line4;
-        else if (arraysEqual(choices, ["right", "left", "right", "right"])) currentLine = line5;
-        else if (arraysEqual(choices, ["right", "left", "right", "left"])) currentLine = line6;
-        else if (arraysEqual(choices, ["right", "left", "left", "right"])) currentLine = line7;
-        else if (arraysEqual(choices, ["right", "left", "left", "left"])) currentLine = line8;
+        if (arraysEqual(choices, ["right", "right", "right"])) currentLine = line1;
+        else if (arraysEqual(choices, ["right", "right", "left"])) currentLine = line2;
+        else if (arraysEqual(choices, ["right", "left", "right"])) currentLine = line3;
+        else if (arraysEqual(choices, ["right", "left", "left"])) currentLine = line4;
+        else if (arraysEqual(choices, ["left", "right", "right"])) currentLine = line5;
+        else if (arraysEqual(choices, ["left", "right", "left"])) currentLine = line6;
+        else if (arraysEqual(choices, ["left", "left", "right"])) currentLine = line7;
+        else if (arraysEqual(choices, ["left", "left", "left"])) currentLine = line8;
 
         index = 0; //Start a new story from the beginning.
         showPage();
@@ -175,7 +174,6 @@ var index = 0;
 
         //Increase index by one.
         index++;
-
         //Show new page.
         showPage();
 
@@ -189,7 +187,7 @@ var index = 0;
     
     //Add a function to restart the book.
     function restart() {
-        //Reset index an choices.
+        //Reset index and choices.
         index = 0;
         choices = [];
         currentLine = line1;
