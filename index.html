@@ -49,7 +49,7 @@ var page31 = "Carlos tells Paw Patrol that he/she is in charge today.<br>But Car
 var page32 = "-Text- page 3.2";
 var page33 = "-Text- page 3.3";
 var page34 = "-Text- page 3.4";
-var page41 = "Zuma and Marshall heads to the lake where the boat is at.<br>Zuma shoots out life buoys to the passengers and as soon they get<br>everyone on land Marshall uses his water cannons to put out the fire.<br>Great job pups! Says Carlos.<br><br>'No job is to big, no pups are to small!'<br>'If you are stuck on a burning boat, just yelp for help!'";
+var page41 = "Zuma and Marshall heads to the lake where the boat is at.<br>Zuma starts shooting out life buoys to the passengers and as soon they get<br>everyone on land Marshall uses his water cannons to put out the fire.<br>'Great job pups!' Says Carlos.<br><br>'No job is to big, no pups are to small!'<br>'If you are stuck on a burning boat, just yelp for help!'";
 var page42 = "-Text- page 4.2";
 var page43 = "-Text- page 4.3";
 var page44 = "-Text- page 4.4";
@@ -141,6 +141,8 @@ var index = 0;
 
 //Add a function for when the user starts the book.
     function startAdventure() {
+      //Hide the 'Hello message'. 
+      helloName.innerText = "";
       //Make the 'Start' button invisible. 
       startButton.style.display = "none";
       //Show the first page.
@@ -152,8 +154,6 @@ var index = 0;
       
 //Add a function that lets the user navigate between the pages.
     function getPage(choice) {
-        //Hide the 'Hello message'. 
-        helloName.innerText = "";
         //Save the users choise.
         choices.push(choice);
   //When the user have made four choices, chose the way.
@@ -213,10 +213,12 @@ var index = 0;
 function showPage() {
     //Output the current page.
     let currentText = currentLine[index];
-    //Replace 'reader' with the input from the textbox.
+    //Show index in the console.
+    console.log("index " + index)
+    //Replace 'Carlos' with the input from the textbox.
     currentText = currentText.replace(/Carlos/g, playerName);
     output.innerHTML = currentText;
-    console.log("index " + index)
+    
   }
 
 </script>
