@@ -6,12 +6,13 @@ body {font-family: sans-serif; text-align: center;}
 </style><br><br>
 
 <!--Ask the user for their name-->
+<form onsubmit="getInput(event)">
 Type your name here:
 <!--Create a text box-->
-<input id="username" type="text">
+<input id="username" type="text" autocomplete="name">
 <!--Add a button for the user to click to confirm the input-->
 <button onclick="getInput()">Enter</button>
-</head>
+</form></head>
 
 <!--Welcome page-->
 <h1 id="hello"></h1>
@@ -113,9 +114,16 @@ var index = 0;
         console.log("Empty page")
 
 //Add a function to get the users input (name).
-    function getInput() {
+    function getInput(event) {
+        //Stop reload.  
+        event.preventDefault();
         //Save the users input. Use trim to remove any empty spaces.  
         playerName = readersName.value.trim();
+        
+        if (playerName !== "") {
+          localStorage.setItem("playerName", playerName);
+        }
+
         //Output the users name on the screen.
         helloName.innerText = "Hello " + playerName + "!";
         //Clear the text box when pushing "Enter". 
@@ -132,6 +140,7 @@ var index = 0;
         index = 0; 
         choices = [];
         currentLine = line1;
+
         //Show the input in the console. 
         console.log("Username: " + playerName);
          //Show the chosen page number in the console.
@@ -223,6 +232,19 @@ function showPage() {
     output.innerHTML = currentText;
   }
   
-  
+  window.onload = function() {
+    //Try to get a saved name from local storage.
+    let savedName = localStorage.getItem("playerName");
+    //
+    if(savedName) {
+    playerName = savedName;
+    //Show the name on the page.
+    helloName.innerText = "Welcome back, " + playerName + " !";
+    //Put the name in the textbox aswell.
+    readersName.value = savedName;
+    //Show the 'Start' button immediatly.
+    startButton.style.display = "inline-block";
+    }
+  } 
 
 </script>
