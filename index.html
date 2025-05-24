@@ -44,7 +44,7 @@ var emptyPage = "";
 var welcomePage = "Welcome to your interactive book:<br><p><span style='color: DodgerBlue; font-size: 36px; font-weight: bold;'>PAW PATROL GETS A NEW LEADER!</span></p><br><br>You will get to chose how the story continues.<br>Press the button below to begin."
 let page1 = "1 It's a beautiful day in Adventure Bay but Ryder doesn't feel very well today.<br>He caught a fever and he feel dissy trying to stand up.<br>Ryder reaches out for his puppy-pad and calls his good friend Carlos.<br>Off course Carlos will help! I'll be right there says Carlos!<br><br>Puppies waiting / Tower empty";
 var page21 = "2.1 Carlos arrives at the tower where all the puppies are already waiting.<br><br>Get urgent alarm / Get alarm";
-var page22 = "2.2 When Carlos arrives the tower is empty.<br>Carlos gets inside to see if there are any alarms. ";  
+var page22 = "2.2 When Carlos arrives the tower is empty.<br>Carlos gets inside to see if there are any alarms.<br><br>Alarms / No alarms";  
 var page31 = "3.1 Carlos tells Paw Patrol that he/she is in charge today.<br>But Carlos doesn't even get to finish the sentence before there's an alarm!<br>There's a fire on a party-boat with lots of passengers.<br>Who will Carlos send?<br><br>Zuma & Marshall / Rubble & Skye";
 var page32 = "-Text- page 3.2";
 var page33 = "-Text- page 3.3";
@@ -192,6 +192,11 @@ var index = 0;
 
         //Show current page.
         showPage();
+         if (index === currentLine.length -1) {
+          left.style.display = "none";
+          right.style.display = "none";
+          restartButton.style.display = "inline-block";
+         }
       }
     
     //Add a function to restart the book.
@@ -230,6 +235,23 @@ function showPage() {
     }
     //Show the text.
     output.innerHTML = currentText;
+    
+    //Change the text of the buttons depending on what page is showing. 
+    if(currentLine === line1 && index === 1) {
+      //Page 2.1.
+      left.innerText = "Get urgent alarm!";
+      right.innerText = "Get alarm!";
+    }
+    else if(currentLine === line1 && index === 2) {
+      //Page 3.1.
+      left.innerText = "Zuma & Marshall";
+      right.innerText = "Rubble & Skye";
+    }
+    else if(currentLine === line5 && index === 1) {
+      //Page 3.1.
+      left.innerText = "Alarms";
+      right.innerText = "No alarms";
+    }
   }
   
   window.onload = function() {
