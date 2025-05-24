@@ -164,6 +164,7 @@ var index = 0;
     function getPage(choice) {
         //Save the users choise.
         choices.push(choice);
+        
   //When the user have made three choices, chose the way.
         if (choices.length === 3) { 
         //Compare the choices with sequences.
@@ -176,22 +177,21 @@ var index = 0;
         else if (arraysEqual(choices, ["left", "left", "right"])) currentLine = line7;
         else if (arraysEqual(choices, ["left", "left", "left"])) currentLine = line8;
 
-        index = 1; //Start a new story from the beginning.
-        showPage();
-        return; 
-        } 
-
-        //Increase index by one.
-        index++;
-        //Show new page.
+        index = 3; //Start a new story from the beginning.
         showPage();
 
         //When on the last page: hide the navigation buttons and show the 'restart' button.
-        if (index === currentLine.length -1) {
           left.style.display = "none";
           right.style.display = "none";
           restartButton.style.display = "inline-block";
+
+          return;
         }
+
+        index++;
+
+        //Show current page.
+        showPage();
       }
     
     //Add a function to restart the book.
