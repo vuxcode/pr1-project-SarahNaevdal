@@ -42,14 +42,14 @@ var playerName = "";
 //Create a variable for each page. 
 var emptyPage = "";
 var welcomePage = "Welcome to your interactive book:<br><p><span style='color: DodgerBlue; font-size: 36px; font-weight: bold;'>PAW PATROL GETS A NEW LEADER!</span></p><br><br>You will get to chose how the story continues.<br>Press the button below to begin."
-let page1 = "It's a beautiful day in Adventure Bay but Ryder doesn't feel very well today.<br>He caught a fever and he feel dissy trying to stand up.<br>He reaches out for his puppy-pad and calls his good friend Carlos.<br>Off course Carlos will help! I'll be right there says Carlos!<br><br>Puppies waiting / Tower empty";
-var page21 = "Carlos arrives at the tower where all the puppies are already waiting.<br><br>Get urgent alarm / Get alarm";
-var page22 = "When Carlos arrives the tower is empty.<br>Carlos gets inside to see if there are any alarms. ";  
-var page31 = "Carlos tells Paw Patrol that he/she is in charge today.<br>But Carlos doesn't even get to finish the sentence before there's an alarm!<br>There is a fire on a party-boat with lots of passengers.<br>Who will Carlos send?<br><br>Zuma & Marshall / Rubble & Skye";
+let page1 = "1 It's a beautiful day in Adventure Bay but Ryder doesn't feel very well today.<br>He caught a fever and he feel dissy trying to stand up.<br>Ryder reaches out for his puppy-pad and calls his good friend Carlos.<br>Off course Carlos will help! I'll be right there says Carlos!<br><br>Puppies waiting / Tower empty";
+var page21 = "2.1 Carlos arrives at the tower where all the puppies are already waiting.<br><br>Get urgent alarm / Get alarm";
+var page22 = "2.2 When Carlos arrives the tower is empty.<br>Carlos gets inside to see if there are any alarms. ";  
+var page31 = "3.1 Carlos tells Paw Patrol that he/she is in charge today.<br>But Carlos doesn't even get to finish the sentence before there's an alarm!<br>There's a fire on a party-boat with lots of passengers.<br>Who will Carlos send?<br><br>Zuma & Marshall / Rubble & Skye";
 var page32 = "-Text- page 3.2";
 var page33 = "-Text- page 3.3";
 var page34 = "-Text- page 3.4";
-var page41 = "Zuma and Marshall heads to the lake where the boat is at.<br>Zuma starts shooting out life buoys to the passengers and as soon they get<br>everyone on land Marshall uses his water cannons to put out the fire.<br>'Great job pups!' Says Carlos.<br><br>'No job is to big, no pups are to small!'<br>'If you're stuck on a burning boat, just yelp for help!'";
+var page41 = "4.1 Zuma and Marshall heads to the lake where the boat is at.<br>Zuma starts shooting out life buoys to the passengers and as soon they get<br>everyone on land Marshall uses his water cannons to put out the fire.<br>'Great job pups!' Says Carlos.<br><br>'No job is to big, no pups are to small!'<br>'If you're stuck on a burning boat, just yelp for help!'";
 var page42 = "-Text- page 4.2";
 var page43 = "-Text- page 4.3";
 var page44 = "-Text- page 4.4";
@@ -164,19 +164,19 @@ var index = 0;
     function getPage(choice) {
         //Save the users choise.
         choices.push(choice);
-  //When the user have made four choices, chose the way.
-        if (choices.length === 4) { 
+  //When the user have made three choices, chose the way.
+        if (choices.length === 3) { 
         //Compare the choices with sequences.
-        if (arraysEqual(choices, ["right" && "right" && "right"])) currentLine = line1;
-        else if (arraysEqual(choices, ["right" && "right" && "left"])) currentLine = line2;
-        else if (arraysEqual(choices, ["right" && "left" && "right"])) currentLine = line3;
-        else if (arraysEqual(choices, ["right" && "left" && "left"])) currentLine = line4;
-        else if (arraysEqual(choices, ["left" && "right" && "right"])) currentLine = line5;
-        else if (arraysEqual(choices, ["left" && "right" && "left"])) currentLine = line6;
-        else if (arraysEqual(choices, ["left" && "left" && "right"])) currentLine = line7;
-        else if (arraysEqual(choices, ["left" && "left" && "left"])) currentLine = line8;
+        if (arraysEqual(choices, ["right", "right", "right"])) currentLine = line1;
+        else if (arraysEqual(choices, ["right", "right", "left"])) currentLine = line2;
+        else if (arraysEqual(choices, ["right", "left", "right"])) currentLine = line3;
+        else if (arraysEqual(choices, ["right", "left", "left"])) currentLine = line4;
+        else if (arraysEqual(choices, ["left", "right", "right"])) currentLine = line5;
+        else if (arraysEqual(choices, ["left", "right", "left"])) currentLine = line6;
+        else if (arraysEqual(choices, ["left", "left", "right"])) currentLine = line7;
+        else if (arraysEqual(choices, ["left", "left", "left"])) currentLine = line8;
 
-        index = 0; //Start a new story from the beginning.
+        index = 1; //Start a new story from the beginning.
         showPage();
         return; 
         } 
@@ -239,7 +239,7 @@ function showPage() {
     if(savedName) {
     playerName = savedName;
     //Show the name on the page.
-    helloName.innerText = "Welcome back, " + playerName + " !";
+    helloName.innerText = "Welcome back, " + playerName + "!";
     //Put the name in the textbox aswell.
     readersName.value = savedName;
     //Show the 'Start' button immediatly.
