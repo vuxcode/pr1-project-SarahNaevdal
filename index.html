@@ -167,9 +167,8 @@ var index = 0;
     function getPage(choice) {
         //Save the users choise.
         choices.push(choice);
-        index++
         
-  //When the user have made three choices, chose the way.
+  //Choice one.
         if (choices.length === 1) { 
         //Show page 2 depending on choice.
         if(choice === "right") {
@@ -182,33 +181,39 @@ var index = 0;
           left.innerText = "Option A"; 
           right.innerText = "Option B";
         }
-        return;
-
+        return; //Stop here, don't show the last page yet.
+      }
+      //Choice two. 
         if (choices.length === 2) {
           const path = choices.join(",");
+          if(path === "right, right") currentLine = line3; 
+          else if(path === "right, left") currentLine = line1;
+          else if(path === "left, right") currentLine = line5;
+          else if(path === "left, left") currentLine = line7;
+          
+          index = 2;
+          showPage();
+          
+          //Adjust the buttons.
           if(path === "right, right") {
-          output.innerHTML = page32.replace(/Carlos/g, playerName);
           left.innerText = "Chase & Rocky"; 
-          right.innerText = "Everest & Rubble";  
-          }
-        else if(path === "right, left") {
-          output.innerHTML = page32.replace(/Carlos/g, playerName);
+          right.innerText = "Everest & Rubble";
+          }   
+          else if(path === "right, left") {
           left.innerText = "Marshall & Skye"; 
-          right.innerText = "Zuma & Rubble";  
-          }
-        else if(path === "left, right") {
-          output.innerHTML = page33.replace(/Carlos/g, playerName);
+          right.innerText = "Zuma & Rubble";
+          }  
+          else if(path === "left, right") {
           left.innerText = "Rescue from the air"; 
-          right.innerText = "Signal lost";  
-          }
-        else if(path === "left, left") {
-          output.innerHTML = page34.replace(/Carlos/g, playerName);
+          right.innerText = "Signal lost";
+          }  
+          else if(path === "left, left") {
           left.innerText = "Tracks down the team"; 
           right.innerText = "Gets stuck in mud";  
-          }
-          return;
+          }  
+          return; //Stop here, don't show the last page yet. 
         }
-
+      //Choice three. Now show the last page.   
         if (choices.length === 3) {
           const path = choices.join(",");
 
@@ -232,16 +237,11 @@ var index = 0;
           return;
         }
       }
-        index++;
-
-        //Show current page.
-        showPage();
          if (index === currentLine.length -1) {
           left.style.display = "none";
           right.style.display = "none";
           restartButton.style.display = "inline-block";
          }
-      }
     
     //Add a function to restart the book.
     function restart() {
