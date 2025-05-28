@@ -11,7 +11,7 @@ Type your name here:
 <!--Create a text box-->
 <input id="username" type="text" autocomplete="name">
 <!--Add a button for the user to click to confirm the input-->
-<button onclick="getInput()">Enter</button>
+<button type="submit">Enter</button>
 </form></head>
 
 <!--Welcome page-->
@@ -72,6 +72,9 @@ var right = document.getElementById("rightButton");
 
 //Find the textbox and connect it to a variable.
 var readersName = document.getElementById("username");
+
+var startButton = document.getElementById("startButton");
+var restartButton = document.getElementById("restartButton");
 
 //Create an global array
 var choices = [];
@@ -164,10 +167,51 @@ var index = 0;
     function getPage(choice) {
         //Save the users choise.
         choices.push(choice);
+        index++
         
   //When the user have made three choices, chose the way.
-        if (choices.length === 3) { 
-        //Compare the choices with sequences.
+        if (choices.length === 1) { 
+        //Show page 2 depending on choice.
+        if(choice === "right") {
+          output.innerHTML = page21.replace(/Carlos/g, playerName);
+          left.innerText = "Mission A"; 
+          right.innerText = "Mission B";
+        }
+        else{
+          output.innerHTML = page22.replace(/Carlos/g, playerName);
+          left.innerText = "Option A"; 
+          right.innerText = "Option B";
+        }
+        return;
+
+        if (choices.length === 2) {
+          const path = choices.join(",");
+          if(path === "right, right") {
+          output.innerHTML = page32.replace(/Carlos/g, playerName);
+          left.innerText = "Chase & Rocky"; 
+          right.innerText = "Everest & Rubble";  
+          }
+        else if(path === "right, left") {
+          output.innerHTML = page32.replace(/Carlos/g, playerName);
+          left.innerText = "Marshall & Skye"; 
+          right.innerText = "Zuma & Rubble";  
+          }
+        else if(path === "left, right") {
+          output.innerHTML = page33.replace(/Carlos/g, playerName);
+          left.innerText = "Rescue from the air"; 
+          right.innerText = "Signal lost";  
+          }
+        else if(path === "left, left") {
+          output.innerHTML = page34.replace(/Carlos/g, playerName);
+          left.innerText = "Tracks down the team"; 
+          right.innerText = "Gets stuck in mud";  
+          }
+          return;
+        }
+
+        if (choices.length === 3) {
+          const path = choices.join(",");
+
         if (arraysEqual(choices, ["right", "right", "right"])) currentLine = line1;
         else if (arraysEqual(choices, ["right", "right", "left"])) currentLine = line2;
         else if (arraysEqual(choices, ["right", "left", "right"])) currentLine = line3;
@@ -187,7 +231,7 @@ var index = 0;
 
           return;
         }
-
+      }
         index++;
 
         //Show current page.
@@ -239,8 +283,9 @@ function showPage() {
     }
     //Show the text.
     output.innerHTML = currentText;
+  }
     
-    //Change the text of the buttons depending on what page is showing. 
+    /*Change the text of the buttons depending on what page is showing. 
    if(currentLine === line1 && index === 1 || currentLine === line2 && index === 1 || currentLine === line3 && index === 1 || currentLine === line4 && index === 1) {
       //Page 2.1.
       left.innerText = "Mission A";
@@ -272,7 +317,8 @@ function showPage() {
       right.innerText = "Get's stuck in mud";
     }
   }
-  
+  */
+
   window.onload = function() {
     //Try to get a saved name from local storage.
     let savedName = localStorage.getItem("playerName");
