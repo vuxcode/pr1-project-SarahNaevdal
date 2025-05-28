@@ -186,16 +186,16 @@ var index = 0;
       //Choice two. 
         if (choices.length === 2) {
           const path = choices.join(",");
-          if(path === "right, right") currentLine = line3; 
-          else if(path === "right, left") currentLine = line1;
-          else if(path === "left, right") currentLine = line5;
-          else if(path === "left, left") currentLine = line7;
+          if(path === "right,right") currentLine = line1; 
+          else if(path === "right,left") currentLine = line2;
+          else if(path === "left,right") currentLine = line5;
+          else if(path === "left,left") currentLine = line7;
           
           index = 2;
           showPage();
           
           //Adjust the buttons.
-          if(path === "right, right") {
+          if(path === "right,right") {
           left.innerText = "Chase & Rocky"; 
           right.innerText = "Everest & Rubble";
           }   
