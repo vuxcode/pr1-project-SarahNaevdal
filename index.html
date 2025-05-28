@@ -241,20 +241,35 @@ function showPage() {
     output.innerHTML = currentText;
     
     //Change the text of the buttons depending on what page is showing. 
-   if(currentLine === line1 && index === 1) {
+   if(currentLine === line1 && index === 1, currentLine === line2 && index === 1, currentLine === line3 && index === 1, currentLine === line4 && index === 1) {
       //Page 2.1.
       left.innerText = "Mission A";
       right.innerText = "Mission B";
     }
-    else if(currentLine === line1 && index === 2) {
+    else if(currentLine === line5 && index === 1, currentLine === line6 && index === 1, currentLine === line7 && index === 1, currentLine === line8 && index === 1) {
+      //Page 2.2.
+      left.innerText = "Option A";
+      right.innerText = "Option B";
+    }
+    else if(currentLine === line1 && index === 2, currentLine === line2 && index === 2) {
       //Page 3.1.
       left.innerText = "Marshall & Skye";
       right.innerText = "Zuma & Rubble";
     }
-    else if(currentLine === line5 && index === 1) {
-      //Page 3.1.
-      left.innerText = "Alarms";
-      right.innerText = "No alarms";
+    else if(currentLine === line3 && index === 2, currentLine === line4 && index === 2) {
+      //Page 3.2.
+      left.innerText = "Chase & Rocky";
+      right.innerText = "Everest & Rubble";
+    }
+    else if(currentLine === line5 && index === 2, currentLine === line6 && index === 2) {
+      //Page 3.3.
+      left.innerText = "Rescue from the air";
+      right.innerText = "Signal lost";
+    }
+    else if(currentLine === line7 && index === 2, currentLine === line8 && index === 2) {
+      //Page 3.4.
+      left.innerText = "Tracks down the team";
+      right.innerText = "Get's stuck in mud";
     }
   }
   
