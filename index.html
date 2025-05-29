@@ -2,7 +2,51 @@
 
 <head>
 <style>
-body {font-family: sans-serif; text-align: center;}  
+body {
+  font-family: sans-serif; 
+  text-align: center;
+  background-color: f0f0f0;
+  margin: 0;
+  padding: 40px 0;
+} 
+
+#bookpage {
+  background-color: white;
+  width: 600px;
+  margin: auto;
+  padding: 40px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: left;
+  min-height: 400px;
+  position: relative;
+}
+
+#bookpage h2 {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.button-area {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+button  {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  background-color: #3498db;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
 </style><br><br>
 
 <!--Ask the user for their name-->
@@ -17,9 +61,9 @@ Type your name here:
 <!--Welcome page-->
 <h1 id="hello"></h1>
 
+<div id="bookPage">
 <!--Create a text element, that can be updated, to output the text of the book-->
 <h2 id="demo"></h2><br><br> 
-
 <!--Buttons-->
 
 <!--Create a button to start the book-->
@@ -30,6 +74,7 @@ Type your name here:
 <!--Add the same function to both buttons-->
 <button id="leftButton" onclick="getPage('left')" style="display: none;">Pups waiting</button>
 <button id="rightButton" onclick="getPage('right')" style="display: none;">Tower empty</button>
+</div>
 
 <!--Create a button to restart the book-->
 <button id="restartButton" onclick="restart()" style="display: none;">Restart the adventure</button>
@@ -42,11 +87,11 @@ var playerName = "";
 //Create a variable for each page. 
 var emptyPage = "";
 var welcomePage = "Welcome to your interactive book:<br><p><span style='color: DodgerBlue; font-size: 36px; font-weight: bold;'>PAW PATROL - A NEW LEADER!</span></p><br><br>You will get to chose how the story continues.<br>Press the button below to begin."
-let page1 = "page 1<br>It's a beautiful day in Adventure Bay, but Ryder isn't feeling well today.<br>He has a fever and feels dizzy when he tries to stand up.<br>Ryder reaches for his Pup-Pad and calls his good friend Carlos.<br>'Of course I'll help!' says Carlos. 'I'll be right there!'<br><br>Pups waiting / Tower empty";
+let page1 = "page 1<br>It's a beautiful day in Adventure Bay, but Ryder isn't feeling well today.<br>He has a fever and feels dizzy when he tries to stand up.<br>Ryder reaches for his Pup-Pad and calls his good friend Carlos.<br>'Of course I'll help!' says Carlos. 'I'll be right there!'";
 var page21 = "page 2.1<br>Carlos arrives at the Lookout Tower, where all the pups are already waiting.<br>They wag their tails and bark happily when they see Carlos.<br>Suddenly, the alarm goes off! 'A mission already?' says Carlos.<br>The big screen turns on with flashing lights and a loud 🚨 'WOO-WOO-WOO!'<br>Carlos stands tall in front of the pups. 'Looks like we've got a mission, pups!' Carlos says.<br>Chase barks, 'PAW Patrol is ready for action, Carlos, sir!'<br><br>Mission A - A Kitten on the Roof!<br>Katie's kitten, Cali, is stuck on top of her vet clinic!<br>She's scared and won't come down.<br><br>Mission B - Trouble at the Bridge!<br>The town's school bus is stuck on a broken bridge.<br>The kids are safe, but they can't get off the bus!";
 var page22 = "page 2.2<br>Carlos arrives at the Lookout Tower — but it's completely empty! 'That's strange...' he says.<br>There's no barking, no tails wagging, no pups anywhere.<br>Suddenly, the Pup-Pad beeps.<br>A video message from Chase appears: 'Carlos! We're out on a morning hike with Ryder! But something's wrong. Ryder started feeling worse, and now we can't reach him! His Pup-Pad battery is low!'<br>Carlos gasps. 'I need to find the team - fast!'<br>Carlos has to make a quick decision: Should he:<br><br>Option A - Use the lookout drone to search from the sky<br>Option B - Take the Pup-Mobile and search the trails on land";  
-var page31 = "page 3.1<br>'We need someone who's good at climbing... and someone who's great with cats!'<br>Which two pups should Carlos send?<br><br>Marshall & Skye / Zuma & Rubble";
-var page32 = "page 3.2<br>'We'll need a strong pup to help fix the bridge… and one who can help the kids off safely!'<br>Which two pups should Carlos send?<br><br>Chase & Rocky / Everest & Rubble";
+var page31 = "page 3.1<br>'We need someone who's good at climbing... and someone who's great with cats!'<br>Which two pups should Carlos send?";
+var page32 = "page 3.2<br>'We'll need a strong pup to help fix the bridge… and one who can help the kids off safely!'<br>Which two pups should Carlos send?";
 var page33 = "page 3.3<br>Carlos activates the lookout tower's drone. It zooms into the sky, scanning the forest.<br>He sees Ryder and the pups near a river, but something's wrong...";
 var page34 = "page 3.4<br>Carlos jumps into the Pup-Mobile and speeds off into the trails.<br>He finds 🐾 pawprints and follows them toward the mountains...";
 var page41 = "page 4.1<br>Skye flies up to the roof in her helicopter and gently talks to Cali.<br>Marshall climbs up with the ladder from his fire truck. Together, they make Cali feel safe.<br>She jumps right into Marshall's paws! Everyone cheers!<br>Katie thanks Carlos and says: 'You're a great leader - just like Ryder!'<br><br>Happy Ending: Kitten rescued, team success, Carlos earns a gold star from the pups. ⭐";
