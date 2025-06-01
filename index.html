@@ -64,8 +64,8 @@ Type your name here:
 <div id="bookPage">
 <!--Create a text element, that can be updated, to output the text of the book-->
 <h2 id="demo"></h2><br><br> 
-<!--Buttons-->
 
+<!--Buttons-->
 <!--Create a button to start the book-->
 <button id="startButton" onclick="startAdventure()" style="display: none;">Start the adventure</button>
 
@@ -74,6 +74,7 @@ Type your name here:
 <!--Add the same function to both buttons-->
 <button id="rightButton" onclick="getPage('right')" style="display: none;">Pups waiting</button>
 <button id="leftButton" onclick="getPage('left')" style="display: none;">Tower empty</button>
+<div id="pageNumber" style="margin-top: 20px; text-align: center; font-size: 0.9rem; color: #666;"></div> 
 </div>
 
 <!--Create a button to restart the book-->
@@ -87,14 +88,14 @@ var playerName = "";
 //Create a variable for each page. 
 var emptyPage = "";
 var welcomePage = "Welcome to your interactive book:<br><p><span style='color: DodgerBlue; font-size: 36px; font-weight: bold;'>PAW PATROL - A NEW LEADER!</span></p><br><br>You will get to chose how the story continues.<br>Press the button below to begin."
-let page1 = "page 1<br>It's a beautiful day in Adventure Bay, but Ryder isn't feeling well today.<br>He has a fever and feels dizzy when he tries to stand up.<br>Ryder reaches for his Pup-Pad and calls his good friend Carlos.<br>'Of course I'll help!' says Carlos. 'I'll be right there!'";
-var page21 = "page 2.1<br>Carlos arrives at the Lookout Tower, where all the pups are already waiting.<br>They wag their tails and bark happily when they see Carlos.<br>Suddenly, the alarm goes off! 'A mission already?' says Carlos.<br>The big screen turns on with flashing lights and a loud 🚨 'WOO-WOO-WOO!'<br>Carlos stands tall in front of the pups. 'Looks like we've got a mission, pups!' Carlos says.<br>Chase barks, 'PAW Patrol is ready for action, Carlos, sir!'<br><br>Mission A - A Kitten on the Roof!<br>Katie's kitten, Cali, is stuck on top of her vet clinic!<br>She's scared and won't come down.<br><br>Mission B - Trouble at the Bridge!<br>The town's school bus is stuck on a broken bridge.<br>The kids are safe, but they can't get off the bus!";
-var page22 = "page 2.2<br>Carlos arrives at the Lookout Tower — but it's completely empty! 'That's strange...' he says.<br>There's no barking, no tails wagging, no pups anywhere.<br>Suddenly, the Pup-Pad beeps.<br>A video message from Chase appears: 'Carlos! We're out on a morning hike with Ryder! But something's wrong. Ryder started feeling worse, and now we can't reach him! His Pup-Pad battery is low!'<br>Carlos gasps. 'I need to find the team - fast!'<br>Carlos has to make a quick decision: Should he:<br><br>Option A - Use the lookout drone to search from the sky<br>Option B - Take the Pup-Mobile and search the trails on land";  
-var page31 = "page 3.1<br>'We need someone who's good at climbing... and someone who's great with cats!'<br>Which two pups should Carlos send?";
-var page32 = "page 3.2<br>'We'll need a strong pup to help fix the bridge… and one who can help the kids off safely!'<br>Which two pups should Carlos send?";
-var page33 = "page 3.3<br>Carlos activates the lookout tower's drone. It zooms into the sky, scanning the forest.<br>He sees Ryder and the pups near a river, but something's wrong...";
-var page34 = "page 3.4<br>Carlos jumps into the Pup-Mobile and speeds off into the trails.<br>He finds 🐾 pawprints and follows them toward the mountains...";
-var page41 = "page 4.1<br>Skye flies up to the roof in her helicopter and gently talks to Cali.<br>Marshall climbs up with the ladder from his fire truck. Together, they make Cali feel safe.<br>She jumps right into Marshall's paws! Everyone cheers!<br>Katie thanks Carlos and says: 'You're a great leader - just like Ryder!'<br><br>Happy Ending: Kitten rescued, team success, Carlos earns a gold star from the pups. ⭐";
+let page1 = "<br>It's a beautiful day in Adventure Bay, but Ryder isn't feeling well today.<br>He has a fever and feels dizzy when he tries to stand up.<br>Ryder reaches for his Pup-Pad and calls his good friend Carlos.<br>'Of course I'll help!' says Carlos. 'I'll be right there!'<br><br><div style='text-align: center; color: #666;'>1.</div>";
+var page21 = "<br>Carlos arrives at the Lookout Tower, where all the pups are already waiting.<br>They wag their tails and bark happily when they see Carlos.<br>Suddenly, the alarm goes off! 'A mission already?' says Carlos.<br>The big screen turns on with flashing lights and a loud 🚨 'WOO-WOO-WOO!'<br>Carlos stands tall in front of the pups. 'Looks like we've got a mission, pups!' Carlos says.<br>Chase barks, 'PAW Patrol is ready for action, Carlos, sir!'<br><br>Mission A - A Kitten on the Roof!<br>Katie's kitten, Cali, is stuck on top of her vet clinic!<br>She's scared and won't come down.<br><br>Mission B - Trouble at the Bridge!<br>The town's school bus is stuck on a broken bridge.<br>The kids are safe, but they can't get off the bus!<br><br><div style='text-align: center; color: #666;'>2.</div>";
+var page22 = "<br>Carlos arrives at the Lookout Tower — but it's completely empty! 'That's strange...' he says.<br>There's no barking, no tails wagging, no pups anywhere.<br>Suddenly, the Pup-Pad beeps.<br>A video message from Chase appears: 'Carlos! We're out on a morning hike with Ryder! But something's wrong. Ryder started feeling worse, and now we can't reach him! His Pup-Pad battery is low!'<br>Carlos gasps. 'I need to find the team - fast!'<br>Carlos has to make a quick decision: Should he:<br><br>Option A - Use the lookout drone to search from the sky<br>Option B - Take the Pup-Mobile and search the trails on land<br><br><div style='text-align: center; color: #666;'>2.</div>";  
+var page31 = "<br>'We need someone who's good at climbing... and someone who's great with cats!'<br>Which two pups should Carlos send?<br><br><div style='text-align: center; color: #666;'>3.</div>";
+var page32 = "<br>'We'll need a strong pup to help fix the bridge… and one who can help the kids off safely!'<br>Which two pups should Carlos send?<br><br><div style='text-align: center; color: #666;'>3.</div>";
+var page33 = "<br>Carlos activates the lookout tower's drone. It zooms into the sky, scanning the forest.<br>He sees Ryder and the pups near a river, but something's wrong...<br><br><div style='text-align: center; color: #666;'>3.</div>";
+var page34 = "<br>Carlos jumps into the Pup-Mobile and speeds off into the trails.<br>He finds 🐾 pawprints and follows them toward the mountains...<br><br><div style='text-align: center; color: #666;'>3.</div>";
+var page41 = "page 4.1<br>Skye flies up to the roof in her helicopter and gently talks to Cali.<br>Marshall climbs up with the ladder from his fire truck. Together, they make Cali feel safe.<br>She jumps right into Marshall's paws! Everyone cheers!<br>Katie thanks Carlos and says: 'You're a great leader - just like Ryder!'<br><br>Happy Ending: Kitten rescued, team success, Carlos earns a gold star from the pups. ⭐<br><br><div style='text-align: center; color: #666;'>4</div>";
 var page42 = "page 4.2<br>Zuma swims around the back of the clinic to call for Cali with a bowl of food.<br>Rubble builds a ramp to the roof - but Cali is too scared to move.<br>In the end, Katie climbs up herself and brings Cali down safely.<br>Carlos says: 'We did our best - next time, I'll choose pups who are better with heights.'<br><br>Learning Ending: Cali is safe, but the team learns about picking the right pups for the job.";
 var page43 = "page 4.3<br>Chase stops traffic using his flashing lights and gives clear commands.<br>Rocky builds a strong ramp from recycled parts.<br>The kids climb down safely from the bus!<br>'PAWsome teamwork!' says Chase.<br><br>Hero Ending: Carlos gets a thank-you from the Mayor, and all the kids give the pups treats! 🍬";
 var page44 = "page 4.4<br>Carlos forgot to check the weather. It started ❄️ snowing by the mountain road!<br>Everest slips on the ice, and Rubble doesn't have enough tools to fix the bridge.<br>They can't reach the bus in time - but Chase and Rocky rush in to help!<br>Carlos says: 'We always have to check the weather. Next time, we'll plan better!'<br><br>Cold but Kind Ending: Everyone is safe, and Carlos learns a big lesson in leadership.";
@@ -120,6 +121,9 @@ var readersName = document.getElementById("username");
 
 var startButton = document.getElementById("startButton");
 var restartButton = document.getElementById("restartButton");
+
+//
+var pageNumberDisplay = document.getElementById("pageNumber");
 
 //Create an global array
 var choices = [];
@@ -330,6 +334,11 @@ function showPage() {
     }
     //Show the text.
     output.innerHTML = currentText;
+
+    if(index === 0) pageNumberDisplay.innerText = "1.";
+    else if(index === 1) pageNumberDisplay.innerText = "2."; 
+    else if(index === 2) pageNumberDisplay.innerText = "3.";
+    else if(index === 3) pageNumberDisplay.innerText = "4.";
   }
     
   window.onload = function() {
