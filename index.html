@@ -72,8 +72,8 @@ Type your name here:
 <!--Create two buttons for the book that can be updated and hidden-->
 <!--Give the buttons different id:s-->
 <!--Add the same function to both buttons-->
-<button id="leftButton" onclick="getPage('left')" style="display: none;">Pups waiting</button>
-<button id="rightButton" onclick="getPage('right')" style="display: none;">Tower empty</button>
+<button id="rightButton" onclick="getPage('right')" style="display: none;">Pups waiting</button>
+<button id="leftButton" onclick="getPage('left')" style="display: none;">Tower empty</button>
 </div>
 
 <!--Create a button to restart the book-->
@@ -218,13 +218,13 @@ var index = 0;
         //Show page 2 depending on choice.
         if(choice === "right") {
           output.innerHTML = page21.replace(/Carlos/g, playerName);
-          left.innerText = "Mission A"; 
-          right.innerText = "Mission B";
+          left.innerText = "Mission B"; 
+          right.innerText = "Mission A";
         }
         else{
           output.innerHTML = page22.replace(/Carlos/g, playerName);
-          left.innerText = "Option A"; 
-          right.innerText = "Option B";
+          left.innerText = "Option B"; 
+          right.innerText = "Option A";
         }
         return; //Stop here, don't show the last page yet.
       }
@@ -242,20 +242,20 @@ var index = 0;
           
           //Adjust the buttons.
           if(currentLine[index] === page31) {
-          left.innerText = "Marshall & Skye"; 
-          right.innerText = "Zuma & Rubble";
+          left.innerText = "Zuma & Rubble"; 
+          right.innerText = "Marshall & Skye";
           }   
           else if(currentLine[index] === page32) {
-          left.innerText = "Chase & Rocky"; 
-          right.innerText = "Everest & Rubble";
+          left.innerText = "Everest & Rubble"; 
+          right.innerText = "Chase & Rocky";
           }  
           else if(currentLine[index] === page33) {
-          left.innerText = "Rescue from the air"; 
-          right.innerText = "Signal lost";
+          left.innerText = "Signal lost"; 
+          right.innerText = "Rescue from the air";
           }  
           else if(currentLine[index] === page34) {
-          left.innerText = "Tracks down the team"; 
-          right.innerText = "Gets stuck in mud";  
+          left.innerText = "Gets stuck in mud"; 
+          right.innerText = "Tracks down the team";  
           }  
           
           return; //Stop here, don't show the last page yet. 
@@ -308,8 +308,8 @@ var index = 0;
         startButton.style.display = "inline-block";
 
         //Reset the text of the buttons of page 1. 
-        left.innerText = "Pups waiting";
-        right.innerText = "Tower empty";
+        left.innerText = "Tower empty";
+        right.innerText = "Pups waiting";
     }
 
     function arraysEqual(a, b) {
