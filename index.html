@@ -209,6 +209,9 @@ var index = 0;
       helloName.innerText = "";
       //Make the 'Start' button invisible. 
       startButton.style.display = "none";
+      //Hide the text-box when the user push the 'Start the adventure' button IF the user didn't push 'Enter'.
+      document.getElementById("nameForm").style.display = "none";
+      
       index = 0;
       //Show the first page.
       showPage();
@@ -324,6 +327,9 @@ var index = 0;
         right.innerText = "Pups waiting";
         //Don't show a page number on this page. 
         pageNumberDisplay.innerText = "";
+
+        //Show the text-box again.
+        document.getElementById("nameForm").style.display = "block";
     }
 
     function arraysEqual(a, b) {
@@ -368,6 +374,11 @@ function showPage() {
     readersName.value = savedName;
     //Show the 'Start' button immediatly.
     startButton.style.display = "inline-block";
+    //Show the text-box so the user can change name if they want to.
+    document.getElementById("nameForm").style.display = "block";
+    }
+    else {
+    document.getElementById("nameForm").style.display = "block";  
     }
   } 
 
