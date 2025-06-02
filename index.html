@@ -12,14 +12,18 @@ body {
 
 #bookpage {
   background-color: white;
-  width: 600px;
+  width: 90%;
+  max-width: 600px;
+  height: 600px;
   margin: auto;
   padding: 40px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   text-align: left;
-  min-height: 400px;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
 }
 
 #bookpage h2 {
@@ -27,15 +31,16 @@ body {
   line-height: 1.6;
 }
 
-.button-area {
-  margin-top: 40px;
-  display: flex;
-  justify-content: space-between;
+#demo {
+flex: 1;
+overflow-y: auto;
+padding-right: 10px;
+margin-bottom: 20px;
 }
 
 button  {
-  padding: 10px 20px;
-  font-size: 1rem;
+  padding: 6px 12px;
+  font-size: 0.9rem;
   border: none;
   background-color: #3498db;
   color: white;
@@ -45,6 +50,13 @@ button  {
 
 button:hover {
   background-color: #2980b9;
+}
+
+@media(max-height: 700px) {
+  #bookPage {
+    height: 90vh;
+  }
+
 }
 
 </style><br><br>
@@ -74,11 +86,11 @@ Type your name here:
 <!--Add the same function to both buttons-->
 <button id="rightButton" onclick="getPage('right')" style="display: none;">Pups waiting</button>
 <button id="leftButton" onclick="getPage('left')" style="display: none;">Tower empty</button>
-<div id="pageNumber" style="margin-top: 20px; text-align: center; font-size: 0.9rem; color: #666;"></div> 
-</div>
 
 <!--Create a button to restart the book-->
 <button id="restartButton" onclick="restart()" style="display: none;">Restart the adventure</button>
+
+<div id="pageNumber" style="margin-top: 20px; text-align: center; font-size: 0.9rem; color: #666;"></div> 
 
 <script>
 
@@ -351,7 +363,7 @@ function showPage() {
     //Show the text.
     output.innerHTML = currentText;
 
-    const pageLabel = ["1.", "2.", "4."];
+    const pageLabel = ["1.", "2.", "3.", "4."];
     if(index >= 0 && index <= 3) {
       pageNumberDisplay.innerText = pageLabel[index] || "";
     }
