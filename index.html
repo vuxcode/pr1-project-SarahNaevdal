@@ -1,9 +1,12 @@
 <!--This is an interactive book where the user can choose how the story will continue and end-->
 
 <head>
+<link href="https://fonts.googleapis.com/css2?family=Nunito&family=Poppins&display=swap" rel="stylesheet">
+
 <style>
+
 body {
-  font-family: sans-serif; 
+  font-family: 'Nunito', Poppins, sans-serif; 
   text-align: center;
   background-color: f0f0f0;
   margin: 0;
@@ -36,6 +39,13 @@ flex: 1;
 overflow-y: auto;
 padding-right: 10px;
 margin-bottom: 20px;
+font-size: 1rem;
+line-height: 1.6;
+text-align: left;
+}
+
+#demo em {
+  font-style: italic;
 }
 
 button  {
@@ -70,10 +80,9 @@ Type your name here:
 <button type="submit">Enter</button>
 </form></head>
 
-<!--Welcome page-->
-<h1 id="hello"></h1>
-
 <div id="bookPage">
+<!--Welcome page-->
+<h1 id="hello"></h1> 
 <!--Create a text element, that can be updated, to output the text of the book-->
 <h2 id="demo"></h2><br><br> 
 
@@ -100,9 +109,9 @@ var playerName = "";
 //Create a variable for each page. 
 var emptyPage = "";
 var welcomePage = "Welcome to your interactive book:<br><p><span style='color: DodgerBlue; font-size: 36px; font-weight: bold;'>PAW PATROL - A NEW LEADER!</span></p><br><br>You will get to chose how the story continues.<br>Press the button below to begin."
-let page1 = "<br>It's a beautiful day in Adventure Bay, but Ryder isn't feeling well today. He has a fever and feels dizzy when he tries to stand up.<br>Ryder reaches for his Pup-Pad and calls his good friend Carlos.<br>'Of course I'll help!' says Carlos. 'I'll be right there!'";
-var page21 = "<br>Carlos arrives at the Lookout Tower, where all the pups are already waiting.<br>They wag their tails and bark happily when they see Carlos.<br>Suddenly, the alarm goes off! 'A mission already?' says Carlos.<br>The big screen turns on with flashing lights and a loud 🚨 'WOO-WOO-WOO!'<br>Carlos stands tall in front of the pups. 'Looks like we've got a mission, pups!' Carlos says.<br>Chase barks, 'PAW Patrol is ready for action, Carlos, sir!'<br><br>Mission A - A Kitten on the Roof!<br>Katie's kitten, Cali, is stuck on top of her vet clinic!<br>She's scared and won't come down.<br><br>Mission B - Trouble at the Bridge!<br>The town's school bus is stuck on a broken bridge.<br>The kids are safe, but they can't get off the bus!";
-var page22 = "<br>Carlos arrives at the Lookout Tower — but it's completely empty! 'That's strange...' he says.<br>There's no barking, no tails wagging, no pups anywhere.<br>Suddenly, the Pup-Pad beeps.<br>A video message from Chase appears: 'Carlos! We're out on a morning hike with Ryder! But something's wrong. Ryder started feeling worse, and now we can't reach him! His Pup-Pad battery is low!'<br>Carlos gasps. 'I need to find the team - fast!'<br>Carlos has to make a quick decision: Should he:<br><br>Option A - Use the lookout drone to search from the sky<br>Option B - Take the Pup-Mobile and search the trails on land";  
+let page1 = "<br>It's a beautiful day in Adventure Bay, but Ryder isn't feeling well today. He has a fever and feels dizzy when he tries to stand up.<br>Ryder reaches for his Pup-Pad and calls his good friend Carlos.<br><em>'Of course I'll help!' says Carlos. 'I'll be right there!'</em>";
+var page21 = "<br>Carlos arrives at the Lookout Tower, where all the pups are already waiting.They wag their tails and bark happily when they see Carlos.<br>Suddenly, the alarm goes off! <em>'A mission already?' says Carlos.</em><br>The big screen turns on with flashing lights and a loud 🚨 'WOO-WOO-WOO!'<br>Carlos stands tall in front of the pups.<br> <em>'Looks like we've got a mission, pups!' Carlos says.</em><br>Chase barks, <em>'PAW Patrol is ready for action, Carlos, sir!'</em><br><br>Mission A - A Kitten on the Roof!<br>Katie's kitten, Cali, is stuck on top of her vet clinic!<br>She's scared and won't come down.<br><br>Mission B - Trouble at the Bridge!<br>The town's school bus is stuck on a broken bridge.<br>The kids are safe, but they can't get off the bus!";
+var page22 = "<br>Carlos arrives at the Lookout Tower — but it's completely empty! 'That's strange...' he says.<br>There's no barking, no tails wagging, no pups anywhere.<br>Suddenly, the Pup-Pad beeps.<br>A video message from Chase appears: <em>'Carlos! We're out on a morning hike with Ryder! But something's wrong. Ryder started feeling worse, and now we can't reach him! His Pup-Pad battery is low!'</em><br>Carlos gasps. 'I need to find the team - fast!'<br>Carlos has to make a quick decision: Should he:<br><br>Option A - Use the lookout drone to search from the sky<br>Option B - Take the Pup-Mobile and search the trails on land";  
 var page31 = "<br>'We need someone who's good at climbing... and someone who's great with cats!'<br>Which two pups should Carlos send?";
 var page32 = "<br>'We'll need a strong pup to help fix the bridge… and one who can help the kids off safely!'<br>Which two pups should Carlos send?";
 var page33 = "<br>Carlos activates the lookout tower's drone. It zooms into the sky, scanning the forest.<br>He sees Ryder and the pups near a river, but something's wrong...";
