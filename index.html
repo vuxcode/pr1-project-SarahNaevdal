@@ -183,13 +183,26 @@ var seq8 = [left, left, left];
 //Create a variable to access one index in the array.
 var index = 0;
 
-//Test!
-//for(var index = 0; index < line1.length; index++) {
-    //Output the current step.
-    //console.log(line1[index]);
-//}
+//?Mappar sidinnehåll till etiketter.
+const pageLabels = {
+  [page1]: "page 1 (page 1)",
+  [page21]: "page 2 (page 2.1)",
+  [page22]: "page 2 (page 2.2)",
+  [page31]: "page 3 (page 3.1)",
+  [page32]: "page 3 (page 3.2)",
+  [page33]: "page 3 (page 3.3)",
+  [page34]: "page 3 (page 3.4)",
+  [page41]: "page 4 (page 4.1)",
+  [page42]: "page 4 (page 4.2)",
+  [page43]: "page 4 (page 4.3)",
+  [page44]: "page 4 (page 4.4)",
+  [page45]: "page 4 (page 4.5)",
+  [page46]: "page 4 (page 4.6)",
+  [page47]: "page 4 (page 4.7)",
+  [page48]: "page 4 (page 4.8)",
+};
 
-//Show the current page number in the console.
+//Show the current page in the console.
         console.log("Welcome page")
 
 //Add a function to get the users input (name).
@@ -266,7 +279,7 @@ var index = 0;
           right.innerText = "Mission B";
         }
         index = 1;
-        console.log("index " + index);
+        showPage();
         pageNumberDisplay.innerText = "2.";
 
         return; //Stop here, don't show the last page yet.
@@ -294,7 +307,7 @@ var index = 0;
           }  
           else if(currentLine[index] === page33) {
           left.innerText = "Rescue from the air"; 
-          right.innerText = "Signall lost";
+          right.innerText = "Signal lost";
           }  
           else if(currentLine[index] === page34) {
           left.innerText = "Tracks down the team"; 
@@ -371,8 +384,12 @@ var index = 0;
 function showPage() {
     //Output the current page.
     let currentText = currentLine[index];
-    //Show index in the console.
+    //Get label. 
+    let label = pageLabels[currentText] || "Unknown page";
+    //Show current index in the console.
     console.log("index " + index);
+    //Show current page in the console.
+    console.log(label); 
 
     //Replace 'Carlos' with the input from the textbox.
     //Don't replace if the user left the textbox empty when pressing 'Enter'.
