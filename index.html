@@ -50,6 +50,14 @@ body {
   line-height: 1.6;
 }
 
+.page-image {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  display: block;
+  margin: 20px auto;
+}
+
 #demo {
 flex: 1;
 overflow-y: auto;
@@ -124,7 +132,7 @@ var playerName = "";
 
 //Create a variable for each page. 
 var emptyPage = "";
-var welcomePage = "Welcome to your interactive book:<br><p><span class='title'>PAW PATROL - A NEW LEADER!</span></p><br><br>You will get to choose how the story continues.<br>Press the button below to begin."
+var welcomePage = "Welcome to your interactive book:<br><p><span class='title'>PAW PATROL - A NEW LEADER!</span></p><br><br>You will get to choose how the story continues.<br>Press the button below to begin.<br><img src='images/paw-print.png' alt='Paw print' class='page-image'>";
 let page1 = "It's a beautiful day in Adventure Bay, but Ryder isn't feeling well today. He has a fever and feels dizzy when he tries to stand up. Ryder reaches for his Pup-Pad and calls his good friend Carlos. 'Of course I'll help' says Carlos, 'I'll be right there!'";
 var page21 = "Carlos arrives at the Lookout Tower - but it's completely empty! 'That's strange...' he says. There's no barking, no tails wagging, no pups anywhere. Suddenly, the Pup-Pad beeps. A video message from Chase appears: 'Carlos, we're out on a morning hike with Ryder. But something's wrong! Ryder started feeling worse, and now we can't reach him! His Pup-Pad battery is low!' Carlos gasps. 'I need to find the team - fast!'<br><br>Carlos has to make a quick decision. Should he:<br>Option A - <em>Use the lookout drone to search from the sky.</em><br>Option B - <em>Take the Pup-Mobile and search the trails on land.</em>";  
 var page22 = "Carlos arrives at the Lookout Tower, where all the pups are already waiting. They wag their tails and bark happily when they see Carlos. Suddenly, the alarm goes off! 'A mission already?' says Carlos. The big screen turns on with flashing lights and a loud 'WOO-WOO-WOO!' 🚨 Carlos stands tall in front of the pups. 'Looks like we've got a mission, pups!' Carlos says. Chase barks, 'PAW Patrol is ready for action, Carlos, sir!'<br><br>Mission A - <em>A Kitten on the Roof!</em><br>Katie's kitten, Cali, is stuck on top of her vet clinic!<br>She's scared and won't come down.<br><br>Mission B - <em>Trouble at the Bridge!</em><br>The town's school bus is stuck on a broken bridge.<br>The kids are safe, but they can't get off the bus!";
